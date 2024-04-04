@@ -32,8 +32,11 @@ header {
   font-size: 1.6rem;
   font-weight: 500;
 }
-.nav_list > li:active {
-  color: var(--W-Primary);
+.nav_list li {
+  cursor: pointer;
+}
+.active {
+  color: var(--W-primary);
 }
 .lang_btn {
   width: 4.2rem;
@@ -43,6 +46,10 @@ header {
   align-items: center;
   justify-content: center;
   background: url("../../assets/icon-world.svg") 50% 50% / 28px 28px no-repeat;
+}
+
+.lang_cont {
+  position: relative;
 }
 
 .lang_btn::before {
@@ -58,4 +65,33 @@ header {
 .lang_btn.active {
   background-color: var(--W-activation);
   background-image: url("../../assets/icon-active-world.svg");
+}
+
+.lang_modal {
+  display: none;
+  position: absolute;
+  transform: translate(-25%, 10%);
+  width: 8rem;
+  border: 1px solid var(--W-grayLv2);
+  border-radius: 1rem;
+  padding: 0.8rem 0;
+  background-color: var(--W-background);
+  box-shadow: var(--EffectShadow);
+}
+
+.lang_modal.active {
+  display: block;
+}
+
+.lang_modal li {
+  padding: 1rem;
+  text-align: center;
+  color: var(--W-grayLv3);
+  cursor: pointer;
+}
+.lang_modal li.active {
+  color: var(--W-primary);
+}
+.lang_modal li:hover {
+  background-color: var(--W-activation);
 }

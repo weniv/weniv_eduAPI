@@ -77,6 +77,7 @@ address {
   --W-grayLv3A11y: #6c7074;
   --W-grayLv4: #47494d;
   --W-activation: #dee8ff;
+  --EffectShadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
 }
 
 /* 폰트*/
