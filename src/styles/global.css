@@ -1,0 +1,96 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+/* reset ------------------------------------------------------- */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+button,
+input {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+button {
+  background: none;
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+}
+button:enabled {
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+img,
+svg {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font: inherit;
+}
+
+/* 공통 ------------------------------------------------------- */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* 색상  ------------------------------------------------------- */
+
+:root {
+  --W-primary: #2e6ff2;
+  --W-primaryA11y: #2861d3;
+  --W-background: #fff;
+  --W-surface: #121314;
+  --W-grayLv1: #f3f5fa;
+  --W-grayLv2: #d9dbe0;
+  --W-grayLv3: #8d9299;
+  --W-grayLv3A11y: #6c7074;
+  --W-grayLv4: #47494d;
+  --W-activation: #dee8ff;
+}
+
+/* 폰트*/
+html {
+  font-size: 62.5%;
+}
+body {
+  min-width: 320px;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  /* color: var(--surface);
+  background-color: var(--background); */
+
+  min-height: 100vh;
+}
