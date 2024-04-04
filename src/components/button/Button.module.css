@@ -1,0 +1,26 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  padding: 1.1rem 2rem;
+  border-radius: 1rem;
+
+  background-color: var(--W-primary);
+  color: var(--W-background);
+}
+
+/* .hover {
+  background: var(--sub-color);
+}
+
+.active {
+  border: 1px solid var(--border-color);
+  background: var(--main-bg-color);
+  color: var(--sub-text-color);
+} */
