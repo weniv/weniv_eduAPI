@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 /* reset ------------------------------------------------------- */
 body,
 p,
@@ -83,15 +83,11 @@ address {
 /* 폰트*/
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   min-width: 320px;
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  /* color: var(--surface);
-  background-color: var(--background); */
-
+  font-family: "Pretendard";
+  letter-spacing: -0.01em;
   min-height: 100vh;
 }
