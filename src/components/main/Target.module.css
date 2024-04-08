@@ -1,12 +1,12 @@
-.target {
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1190px;
   margin: 10rem auto;
 }
-/* 공통 */
-.h2_section {
+
+.target_h2 {
   display: inline-block;
   padding: 1rem 2rem;
   margin-bottom: 2.4rem;
@@ -18,8 +18,8 @@
   font-size: 4rem;
   font-weight: 700;
 }
-/* --공통 */
-.target_subtitle {
+
+.target_description {
   font-size: 1.8rem;
   color: var(--W-grayLv4);
   font-weight: 600;

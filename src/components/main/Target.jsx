@@ -7,13 +7,13 @@ import Mura from "../../assets/mura.png";
 
 const Target = () => {
   return (
-    <section className={styles.target}>
-      <h2 className={styles.h2_section}>사용대상</h2>
-      <p className={styles.target_subtitle}>
+    <section className={styles.section}>
+      <h2 className={styles.target_h2}>사용대상</h2>
+      <p className={styles.target_description}>
         API 요청을 통한 비동기 통신을 실습! <br />
         어디서부터 어떻게 시작해야 할지 모르겠나요?
       </p>
-      <p className={styles.title_section}>eduAPI로 쉽게 실습하세요!</p>
+      <h3 className={styles.title_section}>eduAPI로 쉽게 실습하세요!</h3>
       <ul className={styles.target_ul}>
         <li className={styles.target_li}>
           <img src={Ali} alt="타겟이미지" />
