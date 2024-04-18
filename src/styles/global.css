@@ -51,6 +51,9 @@ a {
 address {
   font: inherit;
 }
+dd {
+  margin-inline-start: 0;
+}
 
 /* 공통 ------------------------------------------------------- */
 .a11y-hidden {
