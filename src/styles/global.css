@@ -93,4 +93,14 @@ body {
   font-family: "Pretendard";
   letter-spacing: -0.01em;
   min-height: 100vh;
+  overflow-y: scroll;
+}
+
+/* 마크다운 */
+div.callout {
+  border: 1px solid var(--W-grayLv2);
+  border-radius: 0.8em;
+  padding: 2em 2em 2em 5.3em;
+  background: url(/src/assets/callout.svg) no-repeat 1.6em 1.8em / 4.2rem;
+  margin: 1em 0;
 }

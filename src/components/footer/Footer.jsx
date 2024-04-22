@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import Logo from "../../assets/weniv-api-logo-gray.svg";
 import ListSNS from "./ListSNS";
+import Copyright from "./Copyright";
 const Footer = () => {
   return (
     <footer>
@@ -12,9 +13,7 @@ const Footer = () => {
               <img src={Logo} alt="로고" />
               <span className="a11y-hidden">WenivEduApi</span>
             </h2>
-            <p className={styles.copyright}>
-              Copyright © 2024 WENIV All Rights Reserved
-            </p>
+            <Copyright />
           </section>
           <div className={styles.wenivInfo}>
             <button type="button" className={styles.info_toggleBtn}>
@@ -53,8 +52,8 @@ const Footer = () => {
               </div>
             </dl>
           </div>
-          <ListSNS />
         </div>
+        <ListSNS />
       </div>
     </footer>
   );

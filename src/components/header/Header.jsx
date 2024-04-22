@@ -1,10 +1,12 @@
 import React from "react";
+import Scrollbar from "./Scrollbar";
 import styles from "./Header.module.css";
 import Logo from "../../assets/weniv-api-logo.svg";
 import { Link, useLocation } from "react-router-dom";
-const Header = () => {
+const Header = ({ type = "null" }) => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+
   return (
     <>
       <header>
@@ -46,6 +48,7 @@ const Header = () => {
           </nav>
         </div>
       </header>
+      {type === "mainPage" && <Scrollbar />}
     </>
   );
 };

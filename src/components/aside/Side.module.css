@@ -1,0 +1,64 @@
+.side {
+  position: sticky;
+  top: 7.4rem;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  /* flex-shrink: 0; */
+  width: 32rem;
+  height: calc(100vh - 7.4rem);
+
+  z-index: 300;
+  border-right: 1px solid var(--W-grayLv2);
+  transition: transform 1s ease-out;
+}
+.nav_title {
+  width: 100%;
+}
+.nav_title h3 {
+  display: flex;
+  align-items: center;
+  /* flex-shrink: 0; */
+  height: 5rem;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.show {
+  /* opacity: 1;*/
+  transform: translateX(0); /* 원래 위치로 보이기 */
+}
+.hide {
+  transform: translateX(-100%); /* 왼쪽으로 숨기기 (너비만큼 이동) */
+  visibility: hidden; /* 완전히 숨김 처리 */
+  opacity: 0;
+  transition: transform 1s ease-out, visibility 0s 1s, opacity 1s ease-out; /* visibility와 opacity에도 transition 적용 */
+}
+.btnClose {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.7rem;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.btnOpen {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0.4rem 0 0.4rem 1rem;
+}
+
+.navi_wrap {
+  background-color: antiquewhite;
+}
+
+.footer {
+  border-top: 1px solid var(--W-grayLv2);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--W-background);
+  padding: 2rem 0;
+}

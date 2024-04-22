@@ -1,11 +1,11 @@
 header {
-  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
   height: 7rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
   background-color: var(--W-background);
-
   display: flex;
   align-items: center;
   justify-content: center;

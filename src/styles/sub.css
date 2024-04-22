@@ -1,0 +1,22 @@
+.sub {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+.sub__content {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .sub {
+    display: block;
+  }
+}
+.content__wrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0 4rem;
+}
