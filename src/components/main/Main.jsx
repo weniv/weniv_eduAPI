@@ -98,10 +98,8 @@ const Main = () => {
             <div>
               <img src={Medal} alt="" />
             </div>
-            <span>JWT 토큰을 통한 인증 방식 실습</span>
-            <p>
-              보안이 중요한 웹 개발에서 필수적인 인증 방식을 배울 수 있습니다.
-            </p>
+            <span>토큰을 통한 인증 방식 실습</span>
+            <p>토큰을 활용한 인증 방식을 배울 수 있습니다.</p>
           </li>
           <li className={styles.func_li}>
             <div>
