@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/header/Header";
-import Side from "../components/aside/Side";
+import Side from "../components/menu/Side";
 import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 import "../styles/sub.css";
 

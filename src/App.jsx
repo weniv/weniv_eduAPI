@@ -3,6 +3,7 @@ import "./styles/global.css";
 import Main from "./page/Main";
 import Landing from "./page/Landing";
 
+
 function App() {
   return (
     <div className="App">

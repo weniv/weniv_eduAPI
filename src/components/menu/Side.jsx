@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Side.module.css";
+
 import Toggle from "../../assets/icon-side-close-left.svg";
 import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
+import Nav from "./Nav";
 
 const Side = () => {
   const [isMenuShow, setIsMenuShow] = useState(true);
@@ -11,12 +13,12 @@ const Side = () => {
   };
   return (
     <>
-      {isMenuShow && (
-        <aside className={`${styles.side} ${styles.show}`}>
-          <div className={styles.nav_title}>
-            <h3>목차</h3>
-          </div>
-          <div className={styles.navi_wrap}></div>
+      {isMenuShow ? (
+        <div className={`${styles.side} ${styles.show}`}>
+          <h3 className={styles.side_title}>
+            <span>목차:</span>
+          </h3>
+          <Nav />
           <footer className={styles.footer}>
             <Copyright />
             <ListSNS />
@@ -25,9 +27,8 @@ const Side = () => {
             <img src={Toggle} alt="목차 메뉴 접기" />
             <span className="a11y-hidden">목차 메뉴 접기</span>
           </button>
-        </aside>
-      )}
-      {!isMenuShow && (
+        </div>
+      ) : (
         <button className={styles.btnOpen} onClick={toggleMenu}>
           <img src={Toggle} alt="목차 메뉴 열기" />
           <span className="a11y-hidden">목차 메뉴 열기</span>

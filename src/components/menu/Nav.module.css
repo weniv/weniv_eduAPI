@@ -1,0 +1,79 @@
+.nav {
+  width: 100%;
+  font-size: 1.6rem;
+}
+.fold > div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.fold > div a {
+  flex-grow: 1;
+}
+
+.fold,
+.notFold {
+  transition: background-color 0.3s;
+}
+
+.fold div:hover,
+.notFold:hover {
+  background-color: var(--W-activation);
+}
+
+.fold div:hover button,
+.notFold:hover button {
+  background-color: var(--W-background);
+}
+
+.menu a {
+  padding: 0.8rem;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  outline-offset: -1px;
+}
+.menu .active {
+  background-color: var(--W-grayLv1);
+  color: var(--W-primaryA11y);
+  font-weight: 700;
+}
+/* 1depth */
+.menu > li > a {
+  padding-left: 4rem;
+}
+/* 2depth */
+.menu > li > ol > li > div {
+  padding-left: 2rem;
+}
+.menu > li > ol > li > a {
+  padding-left: 6rem;
+  line-height: 1.6;
+  font-size: 0.95em;
+  letter-spacing: -0.1px;
+}
+/* 3depth */
+.menu > li > ol > li > ol > li > a {
+  padding-left: 8rem;
+}
+
+.chapterBtn {
+  /* 토글버튼 */
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  margin-left: 1.2rem;
+}
+
+.chapterBtn img {
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+.chapterBtn.close img {
+  rotate: -90deg;
+}
+.hide {
+  display: none;
+}

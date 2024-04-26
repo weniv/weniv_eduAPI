@@ -1,40 +1,39 @@
 .side {
+  box-sizing: border-box;
   position: sticky;
   top: 7.4rem;
   left: 0;
+  width: 32rem;
+  height: calc(100vh - 7.4rem);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  /* flex-shrink: 0; */
-  width: 32rem;
-  height: calc(100vh - 7.4rem);
-
+  flex-shrink: 0;
+  /* margin-right: -4.2rem; */
   z-index: 300;
   border-right: 1px solid var(--W-grayLv2);
   transition: transform 1s ease-out;
+  background-color: var(--W-background);
 }
-.nav_title {
+.side_title {
   width: 100%;
 }
-.nav_title h3 {
+.side_title span {
   display: flex;
   align-items: center;
-  /* flex-shrink: 0; */
   height: 5rem;
   padding: 0 2rem;
   font-size: 1.4rem;
   font-weight: 600;
 }
-
 .show {
-  /* opacity: 1;*/
-  transform: translateX(0); /* 원래 위치로 보이기 */
+  transform: translateX(0);
 }
 .hide {
-  transform: translateX(-100%); /* 왼쪽으로 숨기기 (너비만큼 이동) */
-  visibility: hidden; /* 완전히 숨김 처리 */
+  transform: translateX(-100%);
+  visibility: hidden;
   opacity: 0;
-  transition: transform 1s ease-out, visibility 0s 1s, opacity 1s ease-out; /* visibility와 opacity에도 transition 적용 */
+  transition: transform 1s ease-out, visibility 0s 1s, opacity 1s ease-out;
 }
 .btnClose {
   position: absolute;
@@ -45,13 +44,11 @@
 }
 
 .btnOpen {
+  position: sticky;
+  z-index: 200;
   width: 3.2rem;
   height: 3.2rem;
-  margin: 0.4rem 0 0.4rem 1rem;
-}
-
-.navi_wrap {
-  background-color: antiquewhite;
+  margin: 0.7rem 0 0 0.7rem;
 }
 
 .footer {

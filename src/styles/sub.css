@@ -3,9 +3,11 @@
   align-items: flex-start;
   width: 100%;
   position: relative;
+  background-color: aliceblue;
 }
 .sub__content {
   flex-grow: 1;
+  background-color: aquamarine;
 }
 
 @media screen and (max-width: 1024px) {

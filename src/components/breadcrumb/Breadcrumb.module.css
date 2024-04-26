@@ -1,4 +1,4 @@
-/* .breadcrumb {
+.breadcrumb {
   display: flex;
   gap: 0.4rem;
 }
@@ -24,4 +24,4 @@
 }
 .breadcrumb li:last-child a {
   font-weight: bold;
-} */
+}

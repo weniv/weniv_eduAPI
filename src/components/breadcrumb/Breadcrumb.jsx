@@ -1,7 +1,11 @@
 import React from "react";
-
+import styles from "./Breadcrumb.module.css";
 const Breadcrumb = () => {
-  return <div>Breadcrumb</div>;
+  return (
+    <ol className={styles.breadcrumb}>
+      <li>Breadcrumb</li>
+    </ol>
+  );
 };
 
 export default Breadcrumb;
