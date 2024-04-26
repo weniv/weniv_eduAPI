@@ -1,0 +1,54 @@
+{
+  "title": "eduAPI",
+  "link": "/eduAPI",
+  "sections": [
+    {
+      "title": "eduAPI",
+      "link": "/eduAPI/info",
+      "sections": [
+        {
+          "title": "eduAPI 소개",
+          "link": "/eduAPI/info/intro"
+        },
+        {
+          "title": "API 안내",
+          "link": "/eduAPI/info/guide"
+        }
+      ]
+    },
+    {
+      "title": "API 명세",
+      "link": "/eduAPI/specification",
+      "sections": [
+        {
+          "title": "Authorization",
+          "link": "/eduAPI/specification/authorization"
+        },
+        {
+          "title": "블로그 정보",
+          "link": "/eduAPI/specification/blog"
+        },
+        {
+          "title": "상품 정보",
+          "link": "/eduAPI/specification/product"
+        },
+        {
+          "title": "사용자 정보",
+          "link": "/eduAPI/specification/user"
+        },
+        {
+          "title": "강의 정보",
+          "link": "/eduAPI/specification/lecture"
+        },
+        {
+          "title": "마크다운 블로그",
+          "link": "/eduAPI/specification/markdown"
+        },
+        {
+          "title": "부록",
+          "link": "/eduAPI/specification/appendix"
+        }
+      ]
+    }
+  ]
+}
