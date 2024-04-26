@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import ScrollWrap from "./ScrollWrap";
 import ChapterBtn from "../../assets/icon-down.svg";
 
-const MenuItem = () => {
+const MenuItem = (props) => {
+  const { title, link, sections } = props;
+  console.log(link);
   const [fold, setFold] = useState(false);
 
   // scroll 이동
@@ -25,40 +27,44 @@ const MenuItem = () => {
   const toggleList = () => {
     setFold(!fold);
   };
-  return (
-    <li className={styles.fold}>
-      <div>
-        <Link href="./">eduAPI</Link>
-        <button
-          className={`${styles.chapterBtn} ${fold ? styles.close : null}`}
-          onClick={toggleList}
-        >
-          <img src={ChapterBtn} alt="접기" />
-        </button>
-      </div>
-      <ol className={fold ? styles.hide : null}>
-        <li>
-          <Link to="/">eduAPI소개</Link>
-        </li>
-        <li>
-          <Link to="/">API안내</Link>
-        </li>
-      </ol>
-    </li>
-  );
+  if (sections && sections.length > 0) {
+    return (
+      <li className={styles.fold}>
+        <div>
+          <Link to={link}>{title}</Link>
+          <button
+            className={`${styles.chapterBtn} ${fold ? styles.close : null}`}
+            onClick={toggleList}
+          >
+            <img src={ChapterBtn} alt="접기" />
+          </button>
+        </div>
+        <ol className={fold ? styles.hide : null}>
+          {sections.map((section, index) => (
+            <MenuItem key={index} {...section} />
+          ))}
+        </ol>
+      </li>
+    );
+  } else {
+    return (
+      <li>
+        <Link to={link ? link : ""}>{title}</Link>
+      </li>
+    );
+  }
 };
 
-const Nav = () => {
-  // const { title, link, sections } = data;
+const Nav = ({ menudata }) => {
+  const { data } = menudata;
   return (
     <>
       {/* <ScrollWrap> */}
       <nav className={styles.nav}>
         <ol className={styles.menu}>
-          {/* {sections.map((data, index) => (
-              <MenuItem key={index} {...data} />
-            ))} */}
-          <MenuItem />
+          {data.sections.map((item, index) => (
+            <MenuItem key={index} {...item} />
+          ))}
         </ol>
       </nav>
       {/* </ScrollWrap> */}

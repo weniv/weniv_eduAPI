@@ -22,6 +22,11 @@
   background-color: var(--W-activation);
 }
 
+.fold > ol > li:hover,
+.notFold > ol > li:hover {
+  background-color: var(--W-activation);
+}
+
 .fold div:hover button,
 .notFold:hover button {
   background-color: var(--W-background);
@@ -35,7 +40,7 @@
   box-sizing: border-box;
   outline-offset: -1px;
 }
-.menu .active {
+.menu.active {
   background-color: var(--W-grayLv1);
   color: var(--W-primaryA11y);
   font-weight: 700;

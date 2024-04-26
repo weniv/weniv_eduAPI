@@ -1,6 +1,7 @@
 .breadcrumb {
   display: flex;
   gap: 0.4rem;
+  margin-left: 2rem;
 }
 .breadcrumb li {
   display: flex;

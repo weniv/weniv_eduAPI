@@ -22,3 +22,27 @@
   box-sizing: border-box;
   padding: 0 4rem;
 }
+.content__wrap .main {
+  width: 100%;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+.content__wrap aside {
+  flex-shrink: 0;
+}
+
+/* contents */
+.main {
+  font-size: 1.125em;
+  line-height: 1.8;
+}
+
+.main.title {
+  font-size: 2.22em;
+  border-bottom: 2px solid var(--W-grayLv2);
+  padding-bottom: 0.2em;
+  margin-bottom: 0.8em;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  word-break: break-all;
+}

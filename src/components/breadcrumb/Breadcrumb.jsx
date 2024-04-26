@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./Breadcrumb.module.css";
+import { Link } from "react-router-dom";
 const Breadcrumb = () => {
   return (
     <ol className={styles.breadcrumb}>
-      <li>Breadcrumb</li>
+      <li>
+        <Link href="/">eduAPI</Link>
+      </li>
     </ol>
   );
 };

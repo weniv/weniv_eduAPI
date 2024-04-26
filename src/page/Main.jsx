@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Side from "../components/menu/Side";
 import Breadcrumb from "../components/breadcrumb/Breadcrumb";
+import menuData from "../data/menu/eduAPI.json";
 import "../styles/sub.css";
 
 const Main = () => {
+  const [menu, setMenu] = useState(menuData);
+
   return (
     <>
       <Header type="mainPage" />
       <div className="sub">
-        <Side />
+        <Side data={menu} />
         <div className="sub__content">
           <Breadcrumb />
-          {/* {children} */}
+          <Outlet />
         </div>
       </div>
     </>

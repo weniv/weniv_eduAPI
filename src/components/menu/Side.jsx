@@ -6,7 +6,7 @@ import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
 import Nav from "./Nav";
 
-const Side = () => {
+const Side = (menudata) => {
   const [isMenuShow, setIsMenuShow] = useState(true);
   const toggleMenu = () => {
     setIsMenuShow(!isMenuShow);
@@ -18,7 +18,7 @@ const Side = () => {
           <h3 className={styles.side_title}>
             <span>목차:</span>
           </h3>
-          <Nav />
+          <Nav menudata={menudata} />
           <footer className={styles.footer}>
             <Copyright />
             <ListSNS />
