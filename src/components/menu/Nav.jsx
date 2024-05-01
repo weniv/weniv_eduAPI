@@ -6,7 +6,6 @@ import ChapterBtn from "../../assets/icon-down.svg";
 
 const MenuItem = (props) => {
   const { title, link, sections } = props;
-  console.log(link);
   const [fold, setFold] = useState(false);
 
   // scroll 이동
