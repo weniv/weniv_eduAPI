@@ -1,23 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+import {
+  fetchMarkdownContent,
+  convertMarkdownToHtml,
+} from "../../utils/convertMarkdowntoHtml";
+
+const MarkdownContent = ({ markdownPath }) => {
+  const [htmlContent, setHtmlContent] = useState("");
+
+  useEffect(() => {
+    async function loadMarkdownContent() {
+      try {
+        const markdownText = await fetchMarkdownContent(markdownPath);
+        const html = await convertMarkdownToHtml(markdownText);
+        setHtmlContent(html);
+      } catch (error) {
+        console.error("Failed to load Markdown content:", error);
+      }
+    }
+
+    loadMarkdownContent();
+
+    return () => {
+      setHtmlContent("");
+    };
+  }, [markdownPath]);
+
+  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+};
+
 const Page = () => {
   const location = useLocation();
-  const [markdown, setMarkdown] = useState("");
-  useEffect(() => {
-    const markdownPath = `/_md${location.pathname}.md`;
-    fetch(markdownPath)
-      .then((response) => response.text())
-      .then((text) => setMarkdown(text));
-  }, [location]);
+  const markdownPath = `../_md${location.pathname}.md`;
+
   return (
     <div>
       <h1>Content for {location.pathname}</h1>
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <MarkdownContent markdownPath={markdownPath} />
     </div>
   );
 };
 
 export default Page;
-
-// https://fe-developers.kakaoent.com/2022/221222-custom-md/
