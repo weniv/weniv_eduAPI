@@ -20,26 +20,27 @@ const Footer = () => {
               (주)위니브 사업자 정보
             </button>
             <dl>
-              <dt className={styles.sort}>
-                <span
-                  className={styles.data_line}
-                  data-lang="company-name-value"
-                >
-                  (주)위니브
-                </span>
-                <dt data-lang="ceo">대표:</dt>
+              <div className={styles.sort}>
+                <dt className={styles.sortTitle}>
+                  <span
+                    className={styles.data_line}
+                    data-lang="company-name-value"
+                  >
+                    (주)위니브
+                  </span>
+                </dt>
                 <dd className={styles.data_line} data-lang="ceo-value">
-                  이호준
+                  대표: 이호준
                 </dd>
-              </dt>
+              </div>
               <div className={styles.sort}>
                 <dt data-lang="business-license">사업자 번호:</dt>
                 <dd className={styles.data_line}>546-86-01737</dd>
-                <dt className={styles.sr_only} data-lang="industry">
+                <dt className={styles.srOnly} data-lang="industry">
                   업종:
                 </dt>
                 <dd
-                  className={`${styles["data_line"]} ${styles["data_involved"]} ${styles["data-lang-industry-value"]}`}
+                  className={`${styles.data_line} ${styles.dataInvolved} ${styles["data-lang-industry-value"]}`}
                 >
                   정보통신업
                 </dd>
