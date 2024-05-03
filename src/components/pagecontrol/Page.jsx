@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import {
   fetchMarkdownContent,
   convertMarkdownToHtml,
 } from "../../utils/convertMarkdowntoHtml";
+import BreadCrumb from "../breadcrumb/Breadcrumb";
+
 
 const MarkdownContent = ({ markdownPath }) => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -31,11 +33,14 @@ const MarkdownContent = ({ markdownPath }) => {
 
 const Page = () => {
   const location = useLocation();
-  const markdownPath = `../_md${location.pathname}.md`;
+  const path = location.pathname;
+  const markdownPath = `../_md${path}.md`;
+  const pathArray = path.split("/").filter(Boolean);
 
   return (
     <div>
-      <h1>Content for {location.pathname}</h1>
+      <BreadCrumb data={pathArray} />
+      <h1>Content for {path}</h1>
       <MarkdownContent markdownPath={markdownPath} />
     </div>
   );

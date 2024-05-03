@@ -20,7 +20,7 @@
 }
 @media (hover: hover) {
   .breadcrumb a:hover {
-    background-color: var(--activation);
+    background-color: var(--W-activation);
   }
 }
 .breadcrumb li:last-child a {

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Side from "../components/menu/Side";
-import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 import menuData from "../data/menu/eduAPI.json";
 import "../styles/sub.css";
 
@@ -15,7 +14,6 @@ const Main = () => {
       <div className="sub">
         <Side data={menu} />
         <div className="sub__content">
-          <Breadcrumb />
           <Outlet />
         </div>
       </div>
