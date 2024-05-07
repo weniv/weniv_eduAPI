@@ -7,7 +7,7 @@
 }
 .sub__content {
   flex-grow: 1;
-  background-color: aquamarine;
+  background-color: var(--W-background);
 }
 
 @media screen and (max-width: 1024px) {

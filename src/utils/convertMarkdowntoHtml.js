@@ -42,7 +42,7 @@ export const convertMarkdownToHtml = async (markdown) => {
     .use(remarkDirective)
     .use(myRemarkPlugin)
     .use(remarkGfm)
-    .use(remarkBehead, { minDepth: 4 })
+    .use(remarkBehead, { minDepth: 3 })
     .use(remark2rehype)
     .use(rehypeTitleFigure)
     .use(rehypeStringify)

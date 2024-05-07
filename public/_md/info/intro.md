@@ -1,9 +1,10 @@
----
-chapter: eduAPI
-title: eduAPI 소개
----
-
 # 1. eduAPI 소개
+
+## 2. 이건 2
+
+### 3. 이건 3
+
+#### 4. 이건 4
 
 웹으로 비동기 통신을 연습할 수 있도록 CRUD API 서비스를 제공합니다. fetch를 통해 회원가입, 로그인, 로그아웃, JWT 토큰, 사용자 CRUD, 블로그 CRUD, 상품 CRUD, 강의 CRUD 등을 실습할 수 있습니다.
 

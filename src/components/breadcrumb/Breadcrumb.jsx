@@ -1,32 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Breadcrumb.module.css";
-import menuData from "../../data/menu/eduAPI.json"; //
 
-const Breadcrumb = ({ data }) => {
-
-  const findSectionTitle = (sections, path) => {
-    for (let section of sections) {
-      if (section.link === path) {
-        return section.title;
-      }
-      if (section.sections) {
-        const found = findSectionTitle(section.sections, path);
-        if (found) return found;
-      }
-    }
-  };
+const Breadcrumb = ({ data, title, subtitle }) => {
+  console.log(data, title, subtitle);
 
   const buildBreadcrumb = () => {
     const items = [];
     let currentPath = "";
 
-    for (const part of data) {
+    for (let index = 0; index < data.length; index++) {
+      const part = data[index];
       currentPath += "/" + part;
-      const title = findSectionTitle(menuData.sections, currentPath);
-      if (title) {
-        items.push({ title: title, link: currentPath });
-      }
+      const isTitle = index === 0; // 첫 번째 아이템이면 true, 그 외에는 false
+      items.push({
+        title: isTitle ? title : subtitle, // 첫 번째 아이템에는 'title'을 사용하고, 그 외에는 'subtitle' 사용
+        link: currentPath,
+      });
     }
 
     return items;

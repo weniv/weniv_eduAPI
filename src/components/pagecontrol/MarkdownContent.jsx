@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
 import {
   fetchMarkdownContent,
   convertMarkdownToHtml,
 } from "../../utils/convertMarkdowntoHtml";
-import BreadCrumb from "../breadcrumb/Breadcrumb";
-
+import styles from "./MarkdownContent.module.css";
 
 const MarkdownContent = ({ markdownPath }) => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -24,26 +22,16 @@ const MarkdownContent = ({ markdownPath }) => {
     loadMarkdownContent();
 
     return () => {
-      setHtmlContent("");
+      setHtmlContent(""); // 컴포넌트 언마운트 시 상태를 초기화
     };
   }, [markdownPath]);
 
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
-};
-
-const Page = () => {
-  const location = useLocation();
-  const path = location.pathname;
-  const markdownPath = `../_md${path}.md`;
-  const pathArray = path.split("/").filter(Boolean);
-
   return (
-    <div>
-      <BreadCrumb data={pathArray} />
-      <h1>Content for {path}</h1>
-      <MarkdownContent markdownPath={markdownPath} />
-    </div>
+    <div
+      className={styles.markdownContent}
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
   );
 };
 
-export default Page;
+export default MarkdownContent;

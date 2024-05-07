@@ -2,6 +2,8 @@
   display: flex;
   gap: 0.4rem;
   margin-left: 2rem;
+  font-size: 1.4rem;
+  background-color: azure;
 }
 .breadcrumb li {
   display: flex;
