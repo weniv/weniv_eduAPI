@@ -14,6 +14,7 @@ const MarkdownContent = ({ markdownPath }) => {
         const markdownText = await fetchMarkdownContent(markdownPath);
         const html = await convertMarkdownToHtml(markdownText);
         setHtmlContent(html);
+        console.log("html", html);
       } catch (error) {
         console.error("Failed to load Markdown content:", error);
       }
