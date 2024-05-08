@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Button = ({ children, color = "blue" }) => {
   const navigate = useNavigate();
   const GotoAPI = () => {
-    navigate("/");
+    navigate("/eduAPI");
   };
   const buttonClass = `${styles.button} ${styles[color]}`;
   return (

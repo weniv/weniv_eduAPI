@@ -8,7 +8,7 @@ const PageLayout = () => {
   const location = useLocation();
   const path = location.pathname;
   const markdownPath = `../_md${path}.md`;
-  const pathArray = path.split("/").filter(Boolean);
+  const pathArray = path.split("/").filter(Boolean).slice(1);
 
   const getTitleAndSubtitle = (menuData, path) => {
     if (menuData.link === path) {

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "./Breadcrumb.module.css";
 
 const Breadcrumb = ({ data, title, subtitle }) => {
-  console.log(data, title, subtitle);
 
   const buildBreadcrumb = () => {
     const items = [];
@@ -12,9 +11,9 @@ const Breadcrumb = ({ data, title, subtitle }) => {
     for (let index = 0; index < data.length; index++) {
       const part = data[index];
       currentPath += "/" + part;
-      const isTitle = index === 0; // 첫 번째 아이템이면 true, 그 외에는 false
+      const isTitle = index === 0;
       items.push({
-        title: isTitle ? title : subtitle, // 첫 번째 아이템에는 'title'을 사용하고, 그 외에는 'subtitle' 사용
+        title: isTitle ? title : subtitle,
         link: currentPath,
       });
     }

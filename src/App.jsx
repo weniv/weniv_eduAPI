@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Main />}>
-          <Route path=":contentId/*" element={<PageLayout />} />
+        <Route path="/eduAPI" element={<Main />}>
+          <Route path="/eduAPI/:contentId/*" element={<PageLayout />} />
         </Route>
-        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
       </Routes>
     </div>
   );

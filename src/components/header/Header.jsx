@@ -5,8 +5,12 @@ import Logo from "../../assets/weniv-api-logo.svg";
 import { Link, useLocation } from "react-router-dom";
 const Header = ({ type = "null" }) => {
   const location = useLocation();
-  const isActive = (path) => location.pathname === path;
-
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === path;
+    }
+    return location.pathname.startsWith(path);
+  };
   return (
     <>
       <header>
@@ -17,11 +21,11 @@ const Header = ({ type = "null" }) => {
           </h1>
           <nav className={styles.header_nav}>
             <ul className={styles.nav_list}>
-              <li className={isActive("/landing") ? styles.active : ""}>
-                <Link to="/landing">eduAPI 소개</Link>
-              </li>
               <li className={isActive("/") ? styles.active : ""}>
-                <Link to="/">CRUD API 명세서</Link>
+                <Link to="/">eduAPI 소개</Link>
+              </li>
+              <li className={isActive("/eduAPI") ? styles.active : ""}>
+                <Link to="/eduAPI">CRUD API 명세서</Link>
               </li>
             </ul>
             <div className={styles.lang_cont}>
