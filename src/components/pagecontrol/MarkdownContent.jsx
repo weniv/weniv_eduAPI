@@ -3,7 +3,7 @@ import {
   fetchMarkdownContent,
   convertMarkdownToHtml,
 } from "../../utils/convertMarkdowntoHtml";
-import styles from "./MarkdownContent.module.css";
+import "../../styles/markdown.css";
 
 const MarkdownContent = ({ markdownPath }) => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -14,7 +14,6 @@ const MarkdownContent = ({ markdownPath }) => {
         const markdownText = await fetchMarkdownContent(markdownPath);
         const html = await convertMarkdownToHtml(markdownText);
         setHtmlContent(html);
-        console.log("html", html);
       } catch (error) {
         console.error("Failed to load Markdown content:", error);
       }
@@ -28,8 +27,8 @@ const MarkdownContent = ({ markdownPath }) => {
   }, [markdownPath]);
 
   return (
-    <div
-      className={styles.markdownContent}
+    <main
+      className="markdownContent"
       dangerouslySetInnerHTML={{ __html: htmlContent }}
     />
   );

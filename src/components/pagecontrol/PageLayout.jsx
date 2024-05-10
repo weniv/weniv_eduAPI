@@ -7,11 +7,11 @@ import menuData from "../../data/menu/eduAPI.json";
 const PageLayout = () => {
   const location = useLocation();
   const path = location.pathname;
-  console.log(path);
+
   const [markdownPath, setMarkdownPath] = useState("");
 
   useEffect(() => {
-    const mdPath = `../_md${path.replace("/eduAPI", "")}.md`;
+    const mdPath = `/_md/${path.replace("/eduAPI", "/")}.md`;
     setMarkdownPath(mdPath);
   }, [path]);
 
@@ -36,7 +36,7 @@ const PageLayout = () => {
   };
 
   const { title, subtitle } = getTitleAndSubtitle(menuData, path);
-  console.log("여기서간다", markdownPath);
+
   return (
     <div>
       <h2 className="a11y-hidden">{title}</h2>

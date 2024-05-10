@@ -5,6 +5,7 @@ import Toggle from "../../assets/icon-side-close-left.svg";
 import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 const Side = (menudata) => {
   const [isMenuShow, setIsMenuShow] = useState(true);
@@ -16,7 +17,7 @@ const Side = (menudata) => {
       {isMenuShow ? (
         <div className={`${styles.side} ${styles.show}`}>
           <h3 className={styles.side_title}>
-            <span>목차:</span>
+            <Link to="/eduAPI">목차:</Link>
           </h3>
           <Nav menudata={menudata} />
           <footer className={styles.footer}>

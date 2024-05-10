@@ -1,0 +1,356 @@
+.main {
+  font-size: 1.125em;
+  line-height: 1.8;
+
+  /* 제목 */
+  .title {
+    font-size: 2.22em;
+    border-bottom: 2px solid var(--W-grayLv2);
+    padding-bottom: 0.2em;
+    margin-bottom: 0.8em;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    word-break: break-all;
+
+    @media screen and (max-width: 640px) {
+      font-size: 1.8em;
+    }
+  }
+
+  h4 {
+    font-size: 1.77em;
+  }
+  h5 {
+    font-size: 1.33em;
+  }
+  h6 {
+    font-size: 1.1em;
+  }
+  /* 
+  h4,
+  h5,
+  h6 {
+    margin-top: -$titleGap;
+    padding-top: $titleGap;
+    margin-bottom: 0.5em;
+  } */
+
+  /* ul,
+  ol,
+  p,
+  img,
+  blockquote,
+  div,
+  table {
+  
+    & + h4,
+    & + h5 {
+      margin-top: calc(2em - $titleGap);
+    }
+    & + h6 {
+      margin-top: calc(1.5em - $titleGap);
+    }
+  } */
+
+  /* 구분선 */
+  hr {
+    border: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--W-grayLv2);
+    margin: 3em 0;
+  }
+
+  /* 링크 */
+  a:not(.btn-link) {
+    color: var(--W-primary);
+    text-decoration: underline;
+    display: inline-flex;
+  }
+
+  .main__inner > div img {
+    display: block;
+    max-height: 50rem;
+    margin: 1em auto;
+    border: 5px solid var(--W-grayLv1);
+  }
+  /* 이미지 */
+  figure {
+    margin: 1em 0 2em;
+    img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+    }
+    figcaption {
+      text-align: center;
+      color: var(--W-grayLv3A11y);
+      /* font-size: fcSize(12, 14); */
+    }
+  }
+
+  /* 인용문 */
+  blockquote {
+    margin: 1em 0;
+    border-left: 4px solid var(--W-primary);
+    padding: 0.8em 1.2em;
+  }
+
+  /* 테이블 */
+  table {
+    max-width: 100%;
+
+    border-collapse: collapse;
+    thead {
+      background-color: var(--W-grayLv1);
+      font-weight: bold;
+    }
+    th,
+    td {
+      text-align: left;
+      border: 1px solid var(--W-grayLv2);
+      padding: 0.2em 1em;
+      word-break: break-all;
+    }
+  }
+
+  /* 코드 */
+  :not(pre) > code {
+    font: inherit;
+    background-color: var(--W-activation);
+    color: var(--primaryA11y);
+    padding: 0 0.3em;
+    border-radius: 0.2em;
+    margin: 2px;
+    display: inline-block;
+    font-weight: 400;
+  }
+  /* 코드 */
+  pre:not(.py-error):not(.py-repl-output):not(.CodeMirror-line) {
+    padding: 3.2rem 6rem 3.2rem 3.2rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    overflow: scroll;
+    margin: 0;
+    overflow: auto;
+    li [data-line] {
+      span {
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  /* pre,
+  code {
+    font-family: var(--code), monospace;
+  } */
+
+  /* 리스트 */
+  ul,
+  ol {
+    padding-left: 1.5em;
+
+    li {
+      &::marker {
+        color: var(--W-primary);
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        font-size: 0.95em;
+      }
+      p + p {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  ul > li {
+    list-style-type: disc;
+  }
+
+  ol > li {
+    list-style-type: decimal;
+  }
+
+  ol ol li {
+    list-style-type: lower-alpha;
+  }
+
+  ul,
+  ol {
+    ul,
+    ol {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  /* 여백 */
+  p + p,
+  p + a,
+  p + ol,
+  p + ul,
+  p + table {
+    margin-top: 1em;
+  }
+
+  blockquote,
+  div {
+    & > p {
+      margin: 0;
+    }
+  }
+  li > p {
+    margin: 0;
+    & + p {
+      margin-top: 0;
+    }
+  }
+
+  /* li + li,
+  p + p {
+    margin-top: fcSize(4, 10);
+  } */
+
+  ol + p,
+  ul + p {
+    margin-top: 1em;
+  }
+
+  /* 커스텀 CSS */
+  .box {
+    background-color: var(--W-grayLv1);
+    padding: 2em 3em;
+    border-radius: 1rem;
+
+    & + * {
+      margin-top: 1em;
+    }
+    & + h4 {
+      margin-top: 0;
+    }
+    .btn-link {
+      background-color: var(--W-background);
+    }
+  }
+
+  /* 링크 */
+  .btn-link {
+    text-decoration: none;
+    width: fit-content;
+    min-height: 2.8em;
+    padding: 0.3em 1.5em 0.3em 3.8em;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    background-color: var(--W-grayLv1);
+    border: 1px solid var(--W-activation);
+    border-radius: 1rem;
+    transition: all 0.3s;
+    line-height: 1.4;
+    word-break: keep-all;
+
+    position: relative;
+    & + * {
+      margin-top: 1em;
+    }
+    & + h4 {
+      margin-top: 0;
+    }
+    &::before {
+      content: "";
+      flex-shrink: 0;
+
+      width: 2.8em;
+      height: 100%;
+
+      background: var(--W-primary) url("../assets/favicon.svg") no-repeat center /
+        80%;
+      /* border-radius: $borderRadius 0 0 $borderRadius; */
+
+      position: absolute;
+      left: 0;
+
+      transition: all 0.3s;
+    }
+
+    &::after {
+      flex-shrink: 0;
+      content: "";
+      display: block;
+      width: 1em;
+      height: 1em;
+      background: url("../assets/icon-up-arrow.svg") no-repeat center / contain;
+      transition: all 0.3s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--W-activation);
+
+        &::after {
+          animation: newwindow 0.3s infinite alternate;
+        }
+      }
+    }
+
+    @keyframes newwindow {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(10%, -10%);
+      }
+    }
+  }
+
+  /* 목차 */
+  .list {
+    & > p:first-child {
+      font-size: 1.2em;
+    }
+    ol {
+      padding-left: 2.2em;
+    }
+    ol li {
+      list-style-type: decimal-leading-zero;
+      &::marker {
+        font-size: 1.2em;
+      }
+    }
+    a {
+      font-size: fcSize(16, 18);
+      color: var(--W-surface);
+      text-decoration: underline var(--W-activation);
+      margin-left: 0.3em;
+    }
+  }
+
+  .beforeAfter {
+    table tr th {
+      width: 50%;
+    }
+  }
+  .cols2 p {
+    border: 5px solid var(--W-grayLv1);
+    img {
+      border: 0;
+      margin: 0;
+    }
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+
+      img {
+        width: 48%;
+        display: inline;
+      }
+    }
+  }
+}
+
+[data-rehype-pretty-code-fragment] {
+  margin: 1em 0;
+}

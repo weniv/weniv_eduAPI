@@ -1,0 +1,209 @@
+.markdownContent {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  padding: 10rem 14.5rem 5rem 14.5rem;
+  /* 제목 */
+  h3 {
+    font-size: 2.22em;
+    padding-bottom: 0.2em;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    word-break: break-all;
+
+    @media screen and (max-width: 640px) {
+      font-size: 1.8em;
+    }
+  }
+  /* 구분선 */
+  hr {
+    border: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--W-grayLv2);
+    margin: 1.25em 0 2em 0;
+  }
+
+  /* code {
+    border-radius: 1rem;
+    background-color: var(--W-grayLv1);
+  } */
+  pre {
+    border-radius: 0.5em;
+    padding: 2em 3em;
+    border-radius: 1rem;
+    background-color: var(--W-grayLv1);
+  }
+  pre > code {
+    display: grid;
+  }
+
+  /* 리스트 */
+  ul,
+  ol {
+    padding-left: 1.5em;
+
+    li {
+      &::marker {
+        color: var(--W-primary);
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        font-size: 0.95em;
+      }
+      p + p {
+        margin-top: 1em;
+      }
+    }
+  }
+  .box {
+    background-color: var(--W-grayLv1);
+    padding: 2em 3em;
+    border-radius: 1rem;
+
+    & + * {
+      margin-top: 1em;
+    }
+    & + h4 {
+      margin-top: 0;
+    }
+    .btn-link {
+      background-color: var(--W-background);
+    }
+  }
+
+  /* 목차 */
+  .list {
+    p:first-child {
+      font-size: 1.6em;
+    }
+    ol {
+      padding-left: 2.2em;
+    }
+    li {
+      margin-top: 1rem;
+    }
+    ol li {
+      list-style-type: decimal-leading-zero;
+      &::marker {
+        font-size: 1.6em;
+      }
+    }
+    a {
+      font-size: 1.6rem;
+      color: var(--W-surface);
+      text-decoration: underline var(--W-activation);
+      margin-left: 0.3em;
+    }
+
+    p + ol {
+      margin-top: 1.6rem;
+    }
+  }
+  /* 콜아웃 */
+  div.callout {
+    border: 1px solid var(--W-grayLv2);
+    border-radius: 0.8em;
+    background-color: var(-W-Activation);
+    padding: 2em 2em 2em 5.3em;
+    background: url(../assets/callout.svg) no-repeat 1.6em 1.8em / 4.2rem;
+    margin: 1em 0;
+  }
+
+  a.btn-solid {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--W-primary);
+    height: 2.4em;
+    padding: 0 1.2em;
+    border-radius: 0.55em;
+
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  .cover {
+    display: block;
+    margin: auto;
+    object-fit: contain;
+    width: auto;
+    height: 50vh;
+
+    aspect-ratio: 152 / 226;
+  }
+
+  [data-rehype-pretty-code-fragment] {
+    position: relative;
+  }
+  /* Inline code block backtick display: none */
+  :not(pre) > code::before,
+  :not(pre) > code::after {
+    display: none;
+  }
+
+  /* inline code block style */
+  :not(pre) > code {
+    color: var(--W-primary);
+    background-color: var(--W-grayLv1);
+    border-radius: 1em;
+  }
+  /* 링크 */
+  .btn-link {
+    text-decoration: none;
+    width: fit-content;
+    min-height: 2.8em;
+    padding: 0.3em 1.5em 0.3em 3.8em;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    background-color: var(--W-grayLv1);
+    border: 1px solid var(--W-activation);
+    border-radius: 1rem;
+    transition: all 0.3s;
+    line-height: 1.4;
+    word-break: keep-all;
+
+    position: relative;
+    & + * {
+      margin-top: 1em;
+    }
+    & + h4 {
+      margin-top: 0;
+    }
+    &::before {
+      content: "";
+      flex-shrink: 0;
+
+      width: 2.8em;
+      height: 100%;
+
+      background: var(--W-primary) url("../assets/favicon.svg") no-repeat center /
+        80%;
+      border-radius: 1rem;
+
+      position: absolute;
+      left: 0;
+
+      transition: all 0.3s;
+    }
+
+    &::after {
+      flex-shrink: 0;
+      content: "";
+      display: block;
+      width: 1em;
+      height: 1em;
+      background: url("../assets/icon-diagonal-arrow.svg") no-repeat center /
+        contain;
+      transition: all 0.3s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--W-activation);
+      }
+    }
+  }
+}

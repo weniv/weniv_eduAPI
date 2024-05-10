@@ -2,8 +2,9 @@
   display: flex;
   gap: 0.4rem;
   margin-left: 2rem;
+
   font-size: 1.4rem;
-  background-color: azure;
+  background-color: var(--W-background);
 }
 .breadcrumb li {
   display: flex;

@@ -18,7 +18,7 @@
 .side_title {
   width: 100%;
 }
-.side_title span {
+.side_title a {
   display: flex;
   align-items: center;
   height: 5rem;
