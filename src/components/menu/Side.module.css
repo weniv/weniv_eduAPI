@@ -1,19 +1,17 @@
 .side {
-  box-sizing: border-box;
   position: sticky;
   top: 7.4rem;
   left: 0;
-  width: 32rem;
-  height: calc(100vh - 7.4rem);
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  flex-shrink: 0;
-  /* margin-right: -4.2rem; */
   z-index: 300;
-  border-right: 1px solid var(--W-grayLv2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   transition: transform 1s ease-out;
+  min-width: 32rem;
+  height: calc(100vh - 7.4rem);
   background-color: var(--W-background);
+  box-sizing: border-box;
+  border-right: 1px solid var(--W-grayLv2);
 }
 .side_title {
   width: 100%;

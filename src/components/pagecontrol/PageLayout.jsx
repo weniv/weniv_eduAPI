@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import BreadCrumb from "../breadcrumb/Breadcrumb";
 import MarkdownContent from "./MarkdownContent";
 import menuData from "../../data/menu/eduAPI.json";
+import Aside from "../menu/Aside";
+import styles from "./PageLayout.module.css";
 
 const PageLayout = () => {
   const location = useLocation();
@@ -38,14 +40,17 @@ const PageLayout = () => {
   const { title, subtitle } = getTitleAndSubtitle(menuData, path);
 
   return (
-    <div>
-      <h2 className="a11y-hidden">{title}</h2>
-      <BreadCrumb
-        data={path.split("/").filter(Boolean).slice(1)}
-        title={title}
-        subtitle={subtitle}
-      />
-      <MarkdownContent markdownPath={markdownPath} />
+    <div className={styles.layout}>
+      <div className={styles.content}>
+        <h2 className="a11y-hidden">{title}</h2>
+        <BreadCrumb
+          data={path.split("/").filter(Boolean).slice(1)}
+          title={title}
+          subtitle={subtitle}
+        />
+        <MarkdownContent markdownPath={markdownPath} />
+      </div>
+      <Aside />
     </div>
   );
 };

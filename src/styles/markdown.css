@@ -1,7 +1,7 @@
 .markdownContent {
   font-size: 1.8rem;
   line-height: 1.8;
-  padding: 10rem 14.5rem 5rem 14.5rem;
+
   /* 제목 */
   h3 {
     font-size: 2.22em;
@@ -36,6 +36,9 @@
   }
   pre > code {
     display: grid;
+  }
+  figure {
+    margin: 0;
   }
 
   /* 리스트 */
