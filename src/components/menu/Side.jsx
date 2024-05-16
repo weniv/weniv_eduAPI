@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Side.module.css";
-
 import Toggle from "../../assets/icon-side-close-left.svg";
 import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
@@ -9,13 +8,26 @@ import { Link } from "react-router-dom";
 
 const Side = (menudata) => {
   const [isMenuShow, setIsMenuShow] = useState(true);
+  const slideRef = useRef(null);
+
   const toggleMenu = () => {
-    setIsMenuShow(!isMenuShow);
+    if (isMenuShow) {
+      // SlideOut(닫힘)
+      slideRef?.current.classList.add(styles.slideOut);
+      setTimeout(() => {
+        setIsMenuShow(false);
+      }, 100);
+    } // SlideIn(열림)
+    else setIsMenuShow(true);
+    setTimeout(() => {
+      slideRef?.current.classList.add(styles.slideIn);
+    }, 100);
   };
+
   return (
     <>
-      {isMenuShow ? (
-        <div className={`${styles.side} ${styles.show}`}>
+      {isMenuShow && (
+        <div ref={slideRef} className={`${styles.side}`}>
           <h3 className={styles.side_title}>
             <Link to="/eduAPI">목차:</Link>
           </h3>
@@ -29,12 +41,18 @@ const Side = (menudata) => {
             <span className="a11y-hidden">목차 메뉴 접기</span>
           </button>
         </div>
-      ) : (
-        <button className={styles.btnOpen} onClick={toggleMenu}>
-          <img src={Toggle} alt="목차 메뉴 열기" />
-          <span className="a11y-hidden">목차 메뉴 열기</span>
-        </button>
       )}
+
+      <button
+        type="button"
+        className={`${styles.btnOpen} ${
+          isMenuShow ? styles.hide : styles.show
+        }`}
+        onClick={toggleMenu}
+      >
+        <img src={Toggle} alt="목차 메뉴 열기" />
+        <span className="a11y-hidden">목차 메뉴 열기</span>
+      </button>
     </>
   );
 };
