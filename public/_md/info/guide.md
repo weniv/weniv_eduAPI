@@ -4,27 +4,26 @@
 
 ## 1. API 주소
 
-```json
-"https://eduapi.weniv.co.kr";
+```python
+"https://eduapi.weniv.co.kr"
 ```
 
 ## 2. 요청(Request)
 
 요청(Request)에서는 통신을 위한 HTTP method와 API에 대한 엔드포인트를 안내합니다. method는 GET, POST, PUT 등 어떤 요청을 보내야 하는지에 대한 요청 타입을 나타냅니다.
 
-```jsonc title="제목"
+```python title="기본 구조"
 Method 엔드포인트
 ```
 
 URL에 데이터를 실어서 서버로 전송하기도 합니다. 경로를 변수로 사용하는 Path Variable과 key와 value의 형태로 구성된 쿼리 파라미터(Query Parameter, Query String) 방법이 있습니다. 쿼리 파라미터는 쿼리 스트링(Query String)이라고 부르기도 합니다.
 
-```jsonc
+```python title="Path Variable"
 Method 엔드포인트/<int:id>
 ```
 
-```jsonc
+```python title="쿼리 파라미터(Query Parameter) / 쿼리 스트링(Query String) / "
 Method 엔드포인트?query={value}
-// 주석
 ```
 
 ## 3.응답(Response)

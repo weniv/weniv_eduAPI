@@ -7,6 +7,7 @@ import Aside from "../menu/Aside";
 import styles from "./PageLayout.module.css";
 
 const PageLayout = () => {
+  // eduAPI 페이지 전체 레이아웃을 담당하는 컴포넌트
   const location = useLocation();
   const path = location.pathname;
 
@@ -41,16 +42,16 @@ const PageLayout = () => {
 
   return (
     <div className={styles.layout}>
+      <BreadCrumb
+        data={path.split("/").filter(Boolean).slice(1)}
+        title={title}
+        subtitle={subtitle}
+      />
       <div className={styles.content}>
         <h2 className="a11y-hidden">{title}</h2>
-        <BreadCrumb
-          data={path.split("/").filter(Boolean).slice(1)}
-          title={title}
-          subtitle={subtitle}
-        />
         <MarkdownContent markdownPath={markdownPath} />
+        <Aside />
       </div>
-      <Aside />
     </div>
   );
 };

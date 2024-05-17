@@ -1,10 +1,14 @@
+/* https://kilee.dev/blog/next-js-blog-codeblock-styling */
+
 .markdownContent {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8;
+  padding: 8rem 0;
+  word-break: keep-all;
 
   /* 제목 */
   h3 {
-    font-size: 2.22em;
+    font-size: 2em;
     padding-bottom: 0.2em;
     margin-bottom: 2rem;
     line-height: 1.4;
@@ -15,6 +19,12 @@
       font-size: 1.8em;
     }
   }
+  /* 소제목 */
+  h4 {
+    font-size: 1.77em;
+    padding: 0.2em 0;
+  }
+
   /* 구분선 */
   hr {
     border: 0;
@@ -24,39 +34,54 @@
     margin: 1.25em 0 2em 0;
   }
 
-  /* code {
-    border-radius: 1rem;
-    background-color: var(--W-grayLv1);
-  } */
+  /* 코드블럭 */
+
   pre {
     border-radius: 0.5em;
     padding: 2em 3em;
     border-radius: 1rem;
     background-color: var(--W-grayLv1);
+    font-size: 0.9em;
+    margin: 1em 0 3em 0;
   }
+
   pre > code {
     display: grid;
   }
   figure {
+    position: relative;
     margin: 0;
   }
 
+  figcaption {
+    position: absolute;
+    bottom: -1.9em;
+    left: 0.5em;
+    font-size: 0.9em;
+    color: var(--W-grayLv3);
+  }
   /* 리스트 */
   ul,
   ol {
     padding-left: 1.5em;
+    margin-top: 1em;
 
-    li {
-      &::marker {
-        color: var(--W-primary);
-        font-weight: bold;
-        letter-spacing: -0.05em;
-        font-size: 0.95em;
-      }
-      p + p {
-        margin-top: 1em;
-      }
+    li > p:first-of-type::before {
+      content: "•";
+      color: var(--W-primary);
+      font-weight: bold;
+      letter-spacing: -0.05em;
+      font-size: 0.95em;
+      margin-right: 0.5em;
     }
+  }
+  li > ul > li::before {
+    content: "•";
+    color: var(--W-grayLv2);
+    font-weight: bold;
+    letter-spacing: -0.05em;
+    font-size: 0.95em;
+    margin-right: 0.5em;
   }
   .box {
     background-color: var(--W-grayLv1);
@@ -147,19 +172,20 @@
   :not(pre) > code {
     color: var(--W-primary);
     background-color: var(--W-grayLv1);
-    border-radius: 1em;
+    border-radius: 0.3rem;
+    font-size: 0.9em;
   }
   /* 링크 */
   .btn-link {
-    text-decoration: none;
-    width: fit-content;
-    min-height: 2.8em;
-    padding: 0.3em 1.5em 0.3em 3.8em;
-    box-sizing: border-box;
-
     display: flex;
     align-items: center;
     gap: 1em;
+    width: fit-content;
+    padding: 0.3em 1.5em 0.3em 3.8em;
+    margin: 1em 0;
+    min-height: 2.8em;
+    text-decoration: none;
+    box-sizing: border-box;
 
     background-color: var(--W-grayLv1);
     border: 1px solid var(--W-activation);

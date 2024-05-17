@@ -3,7 +3,7 @@
   align-items: flex-start;
   width: 100%;
   position: relative;
-  background-color: aliceblue;
+  background-color: var(--W-background);
 }
 .sub__content {
   flex-grow: 1;
