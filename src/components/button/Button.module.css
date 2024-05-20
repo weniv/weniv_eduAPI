@@ -19,6 +19,7 @@
 .white {
   background-color: var(--W-background);
   color: var(--W-surface);
+  border: 1px solid var(--W-grayLv2);
 }
 
 /* .hover {

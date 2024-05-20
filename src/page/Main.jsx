@@ -13,9 +13,7 @@ const Main = () => {
       <Header type="mainPage" />
       <div className="sub">
         <Side data={menu} />
-        {/* <div className="sub__content"> */}
         <Outlet />
-        {/* </div> */}
       </div>
     </>
   );
