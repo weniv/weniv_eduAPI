@@ -21,13 +21,3 @@
   color: var(--W-surface);
   border: 1px solid var(--W-grayLv2);
 }
-
-/* .hover {
-  background: var(--sub-color);
-}
-
-.active {
-  border: 1px solid var(--border-color);
-  background: var(--main-bg-color);
-  color: var(--sub-text-color);
-} */
