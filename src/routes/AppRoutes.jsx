@@ -27,7 +27,8 @@ const flattenMenuLinks = (menu) => {
 const AppRoutes = () => {
   const location = useLocation();
   const validLinks = flattenMenuLinks(menuData);
-  const isValidPath = validLinks.includes(location.pathname);
+  const isValidPath =
+    validLinks.includes(location.pathname) || location.pathname === "/";
 
   return (
     <Routes>
