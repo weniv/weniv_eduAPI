@@ -1,4 +1,61 @@
 .aside {
-  background-color: var(--W-primary);
-  min-width: 28rem;
+  position: sticky;
+  top: 15.6rem;
+  flex-shrink: 0;
+  height: fit-content;
+  margin-left: 2rem;
+}
+
+.aside button {
+  padding: 0;
+  border-radius: 1rem;
+}
+
+.aside button img {
+  width: 2.4rem;
+}
+
+.aside .btnClose {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.aside .btnClose img {
+  rotate: 180deg;
+}
+
+.aside .btnOpen {
+  width: 5rem;
+  height: 5rem;
+  box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.04);
+  border-radius: 1rem;
+  border: 1px solid var(--W-grayLv2);
+}
+
+.aside .sublist {
+  width: 28rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid var(--W-grayLv2);
+  overflow: hidden;
+}
+
+.aside .sublist h3 {
+  flex-shrink: 0;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+}
+
+.aside .sublist a:focus {
+  position: relative;
+  outline-offset: -1px;
+  z-index: 10;
 }

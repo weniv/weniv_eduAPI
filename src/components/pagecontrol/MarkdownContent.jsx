@@ -5,7 +5,7 @@ import {
 } from "../../utils/convertMarkdowntoHtml";
 import "../../styles/markdown.css";
 
-const MarkdownContent = ({ markdownPath }) => {
+const MarkdownContent = ({ markdownPath, onContentLoad }) => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
@@ -14,8 +14,9 @@ const MarkdownContent = ({ markdownPath }) => {
         const markdownText = await fetchMarkdownContent(markdownPath);
         const html = await convertMarkdownToHtml(markdownText);
         setHtmlContent(html);
+        onContentLoad(); // Markdown이 로드된 후에 콜백 호출
       } catch (error) {
-        console.error("Failed to load Markdown content:", error);
+        console.error("데이터를 불러올 수 없습니다", error);
       }
     }
 
@@ -24,7 +25,7 @@ const MarkdownContent = ({ markdownPath }) => {
     return () => {
       setHtmlContent(""); // 컴포넌트 언마운트 시 상태를 초기화
     };
-  }, [markdownPath]);
+  }, [markdownPath, onContentLoad]);
 
   return (
     <main

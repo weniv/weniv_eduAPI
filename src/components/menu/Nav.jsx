@@ -1,27 +1,11 @@
 import React, { useState } from "react";
 import styles from "./Nav.module.css";
 import { Link } from "react-router-dom";
-import ScrollWrap from "./ScrollWrap";
 import ChapterBtn from "../../assets/icon-down.svg";
 
 const MenuItem = (props) => {
   const { title, link, sections } = props;
   const [fold, setFold] = useState(false);
-
-  // scroll 이동
-  // useEffect(() => {
-  //   const sideMenu = document.querySelector("#naviWrap");
-  //   const currentSidebarItem = document.querySelector("#active");
-  //   const scrollToTop = () => {
-  //     sideMenu.scrollTo({
-  //       top:
-  //         currentSidebarItem &&
-  //         currentSidebarItem.offsetTop - window.innerHeight / 4,
-  //       behavior: "smooth",
-  //     });
-  //   };
-  //   scrollToTop();
-  // }, [path]);
 
   const toggleList = () => {
     setFold(!fold);
