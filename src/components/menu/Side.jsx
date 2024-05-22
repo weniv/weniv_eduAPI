@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Side.module.css";
 import Toggle from "../../assets/icon-side-close-left.svg";
 import Copyright from "../footer/Copyright";

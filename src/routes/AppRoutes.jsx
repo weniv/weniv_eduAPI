@@ -34,11 +34,11 @@ const AppRoutes = () => {
     <Routes>
       {isValidPath ? (
         <>
-          <Route path="/eduAPI" element={<Main />}>
-            <Route path="/eduAPI/:contentId/*" element={<PageLayout />} />
-            <Route path="/eduAPI/*" element={<Notfound />} />
-          </Route>
           <Route path="/" element={<Landing />} />
+          <Route path="/eduAPI" element={<Main />}>
+            <Route index element={<PageLayout />} />
+            <Route path=":contentId/*" element={<PageLayout />} />
+          </Route>
           <Route path="*" element={<Notfound />} />
         </>
       ) : (

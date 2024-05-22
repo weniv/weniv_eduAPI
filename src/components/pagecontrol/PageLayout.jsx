@@ -14,7 +14,12 @@ const PageLayout = () => {
   const [isHeading, setIsHeading] = useState(0);
 
   useEffect(() => {
-    const mdPath = `/_md/${path.replace("/eduAPI", "/")}.md`;
+    let mdPath = "";
+    if (path === "/eduAPI") {
+      mdPath = "/_md/eduAPI.md";
+    } else {
+      mdPath = `/_md/${path.replace("/eduAPI", "")}.md`;
+    }
     setMarkdownPath(mdPath);
   }, [path]);
 
