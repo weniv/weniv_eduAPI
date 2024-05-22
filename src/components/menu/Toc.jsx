@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Toc.module.css";
+import { useLocation } from "react-router-dom";
 
 const observerOption = {
   rootMargin: "-70px 0px -50% 0px",
@@ -42,10 +43,10 @@ const scrollWithOffset = (el) => {
   window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
 };
 
-// Toc 컴포넌트
 export default function Toc({ toggleMenu }) {
   const [currentId, setCurrentId] = useState("");
   const [headingEls, setHeadingEls] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     const observer = getIntersectionObserver(setCurrentId);
@@ -55,7 +56,7 @@ export default function Toc({ toggleMenu }) {
     let h4Obj = null;
     let h5Obj = null;
 
-    headingElements.map((heading) => {
+    headingElements.forEach((heading) => {
       observer.observe(heading);
       const title = heading.textContent;
       const tagName = heading.tagName.toLowerCase();
@@ -78,7 +79,7 @@ export default function Toc({ toggleMenu }) {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     const menu = document.querySelector(`.${styles.wrap}`);
