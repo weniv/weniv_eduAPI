@@ -16,9 +16,9 @@ const PageLayout = () => {
   useEffect(() => {
     let mdPath = "";
     if (path === "/eduAPI") {
-      mdPath = "/_md/eduAPI.md";
+      mdPath = `${process.env.PUBLIC_URL}/_md/eduAPI.md`;
     } else {
-      mdPath = `/_md/${path.replace("/eduAPI", "")}.md`;
+      mdPath = `${process.env.PUBLIC_URL}/_md${path.replace("/eduAPI", "")}.md`;
     }
     setMarkdownPath(mdPath);
   }, [path]);
@@ -51,7 +51,7 @@ const PageLayout = () => {
         document.querySelectorAll("h4, h5, h6")
       );
       setIsHeading(headingElements.length);
-    }, 100); // 이거 이렇게 해도 맞는건가..?;;
+    }, 100); // 
   }, []);
 
   return (
