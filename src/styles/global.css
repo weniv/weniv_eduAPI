@@ -54,6 +54,9 @@ address {
 dd {
   margin-inline-start: 0;
 }
+pre {
+  overflow-x: auto;
+}
 
 /* 공통 ------------------------------------------------------- */
 .a11y-hidden {

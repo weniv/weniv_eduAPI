@@ -24,7 +24,7 @@ const Breadcrumb = ({ data, title, subtitle }) => {
   const breadcrumbItems = buildBreadcrumb();
 
   return (
-    <nav>
+    <nav className={styles.layout_nav}>
       <ol className={styles.breadcrumb}>
         {breadcrumbItems.map((item, index) => (
           <li key={index}>

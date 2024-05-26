@@ -3,7 +3,6 @@
   top: 15.6rem;
   flex-shrink: 0;
   height: fit-content;
-  margin-left: 2rem;
 }
 
 .aside button {
@@ -27,25 +26,27 @@
   rotate: 180deg;
 }
 
-.aside .btnOpen {
-  width: 5rem;
-  height: 5rem;
+.btnOpen {
+  width: 4.2rem;
+  height: 4.2rem;
   box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.04);
   border-radius: 1rem;
   border: 1px solid var(--W-grayLv2);
+  background: var(--W-background);
 }
 
 .aside .sublist {
-  width: 28rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
-  border-radius: 1rem;
-  border: 1px solid var(--W-grayLv2);
   overflow: hidden;
+  width: 28rem;
+  background: var(--W-background);
+  border: 1px solid var(--W-grayLv2);
+  border-radius: 1rem;
 }
 
-.aside .sublist h3 {
+.aside h3 {
   flex-shrink: 0;
   height: 5rem;
   display: flex;
@@ -58,4 +59,51 @@
   position: relative;
   outline-offset: -1px;
   z-index: 10;
+}
+
+@media screen and (max-width: 1024px) {
+  .aside {
+    position: fixed;
+    top: 7.8rem;
+    left: 5.6rem;
+    width: calc(100% - 7.6rem);
+  }
+  .aside .sublist {
+    width: 100%;
+  }
+  .btnOpen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+  }
+  .btnOpen img {
+    margin-right: 1.2rem;
+  }
+  @keyframes rotateDown {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes rotateUp {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .rotateDownIcon {
+    animation: rotateDown 0.5s forwards;
+  }
+
+  .rotateUpIcon {
+    animation: rotateUp 0.5s forwards;
+  }
 }

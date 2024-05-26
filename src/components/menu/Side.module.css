@@ -38,12 +38,13 @@
 }
 
 .btnOpen {
-  position: sticky;
+  position: fixed;
   z-index: 200;
-  width: 3.2rem;
-  height: 3.2rem;
-  margin: 0.8rem 0 0 0.7rem;
+  width: 5rem;
+  height: 5rem;
   transition: all 0.5s;
+  background-color: var(--W-background);
+  margin: 0.4rem 0.4rem 0.4rem 0.4rem;
 }
 
 .footer {
@@ -55,10 +56,10 @@
   padding: 2rem 0;
 }
 .slideIn {
-  animation: slideIn 0.3s ease-in both;
+  animation: slideIn 0.3s ease-in;
 }
 .slideOut {
-  animation: slideOut 0.3s ease-in both;
+  animation: slideOut 0.3s ease-in;
 }
 
 @keyframes slideIn {
@@ -80,5 +81,13 @@
   to {
     margin-left: -32rem;
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .btnOpen {
+    box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--W-grayLv2) !important;
+    border-radius: 1rem;
   }
 }

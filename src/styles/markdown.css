@@ -5,7 +5,8 @@
   line-height: 1.8;
   padding: 8rem 0;
   word-break: keep-all;
-  width: 100%;
+  width: 30rem;
+  flex-grow: 1;
 
   /* 제목 */
   h3 {
@@ -38,11 +39,11 @@
   /* 코드블럭 */
 
   pre {
-    border-radius: 0.5em;
+    white-space: pre;
+    font-size: 0.9em;
+    background-color: var(--W-grayLv1);
     padding: 2em 3em;
     border-radius: 1rem;
-    background-color: var(--W-grayLv1);
-    font-size: 0.9em;
     margin: 1em 0 3em 0;
   }
 

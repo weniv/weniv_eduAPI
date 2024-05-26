@@ -1,3 +1,6 @@
+.layout_nav {
+  padding-left: 5rem;
+}
 .breadcrumb {
   display: flex;
   gap: 0.4rem;

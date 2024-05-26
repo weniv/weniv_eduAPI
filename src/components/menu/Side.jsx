@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./Side.module.css";
-import Toggle from "../../assets/icon-side-close-left.svg";
+import ToggleClose from "../../assets/icon-side-close-left.svg";
+import ToggleOpen from "../../assets/icon-chapter.svg";
 import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
 import Nav from "./Nav";
@@ -29,7 +30,7 @@ const Side = (menudata) => {
       {isMenuShow && (
         <div ref={slideRef} className={`${styles.side}`}>
           <h3 className={styles.side_title}>
-            <Link to="/eduAPI">목차:</Link>
+            <Link to="/eduAPI">edu API</Link>
           </h3>
           <Nav menudata={menudata} />
           <footer className={styles.footer}>
@@ -37,7 +38,7 @@ const Side = (menudata) => {
             <ListSNS />
           </footer>
           <button className={styles.btnClose} onClick={toggleMenu}>
-            <img src={Toggle} alt="목차 메뉴 접기" />
+            <img src={ToggleClose} alt="목차 메뉴 접기" />
             <span className="a11y-hidden">목차 메뉴 접기</span>
           </button>
         </div>
@@ -50,7 +51,7 @@ const Side = (menudata) => {
         }`}
         onClick={toggleMenu}
       >
-        <img src={Toggle} alt="목차 메뉴 열기" />
+        <img src={ToggleOpen} alt="목차 메뉴 열기" />
         <span className="a11y-hidden">목차 메뉴 열기</span>
       </button>
     </>

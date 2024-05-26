@@ -12,6 +12,17 @@ const PageLayout = () => {
 
   const [markdownPath, setMarkdownPath] = useState("");
   const [isHeading, setIsHeading] = useState(0);
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     let mdPath = "";
@@ -51,16 +62,18 @@ const PageLayout = () => {
         document.querySelectorAll("h4, h5, h6")
       );
       setIsHeading(headingElements.length);
-    }, 100); // 
+    }, 100); //
   }, []);
 
   return (
     <div className={styles.layout}>
-      <BreadCrumb
-        data={path.split("/").filter(Boolean).slice(1)}
-        title={title}
-        subtitle={subtitle}
-      />
+      {viewportWidth > 1024 ? (
+        <BreadCrumb
+          data={path.split("/").filter(Boolean).slice(1)}
+          title={title}
+          subtitle={subtitle}
+        />
+      ) : null}
       <div className={styles.content}>
         <h2 className="a11y-hidden">{title}</h2>
         <MarkdownContent

@@ -11,9 +11,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .sub {
+  /* .sub {
     display: block;
-  }
+  } */
 }
 .content__wrap {
   width: 100%;
