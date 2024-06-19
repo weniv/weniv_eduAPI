@@ -65,11 +65,34 @@ footer {
 
 .info_toggleBtn {
   display: none;
-  /* align-items: center;
-  gap: 0.4rem;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.6rem;
-  text-align: center; */
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info_toggleBtn {
+    display: block;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+    text-align: center;
+  }
+  .wenivInfo {
+    flex-direction: column;
+  }
+  .wenivInfo dl {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
 }

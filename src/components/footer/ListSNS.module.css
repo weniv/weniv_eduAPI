@@ -2,6 +2,7 @@
   display: inline-flex;
   gap: 0.8rem;
   margin-top: 1.2rem;
+  order: 2;
   /* position: absolute;
   right: 0;
   bottom: 0; */

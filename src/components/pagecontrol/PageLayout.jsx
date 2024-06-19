@@ -5,6 +5,9 @@ import MarkdownContent from "./MarkdownContent";
 import menuData from "../../data/menu/eduAPI.json";
 import Aside from "../menu/Aside";
 import styles from "./PageLayout.module.css";
+import Side from "../menu/Side";
+
+// 메인페이지 전체 레이아웃 구성
 
 const PageLayout = () => {
   const location = useLocation();
@@ -23,7 +26,7 @@ const PageLayout = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  // url에 따라 markdown 파일 경로 설정
   useEffect(() => {
     let mdPath = "";
     if (path === "/eduAPI") {
@@ -66,23 +69,26 @@ const PageLayout = () => {
   }, []);
 
   return (
-    <div className={styles.layout}>
-      {viewportWidth > 1024 ? (
-        <BreadCrumb
-          data={path.split("/").filter(Boolean).slice(1)}
-          title={title}
-          subtitle={subtitle}
-        />
-      ) : null}
-      <div className={styles.content}>
-        <h2 className="a11y-hidden">{title}</h2>
-        <MarkdownContent
-          markdownPath={markdownPath}
-          onContentLoad={handleContentLoad}
-        />
-        {isHeading ? <Aside /> : null}
+    <>
+      <Side data={menuData} />
+      <div className={styles.layout}>
+        {viewportWidth > 1024 ? (
+          <BreadCrumb
+            data={path.split("/").filter(Boolean).slice(1)}
+            title={title}
+            subtitle={subtitle}
+          />
+        ) : null}
+        <div className={styles.content}>
+          <h2 className="a11y-hidden">{title}</h2>
+          <MarkdownContent
+            markdownPath={markdownPath}
+            onContentLoad={handleContentLoad}
+          />
+          {isHeading ? <Aside /> : null}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

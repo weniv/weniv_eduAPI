@@ -52,7 +52,7 @@ const Main = () => {
         </ul>
       </section>
       <section className={styles.section}>
-        <div>
+        <div className={styles.section_guide}>
           <img src={GuideImg} alt="가이드이미지" className={styles.guide_img} />
           <div>
             <h2 className={styles.h2_section}>사용방법</h2>

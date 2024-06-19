@@ -10,7 +10,7 @@ const Main = () => {
     <>
       <Header type="mainPage" />
       <div className="sub">
-        <Side data={menuData} />
+        {/* <Side data={menuData} /> */}
         <Outlet />
       </div>
     </>

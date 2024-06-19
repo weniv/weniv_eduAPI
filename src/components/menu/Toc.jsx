@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./Toc.module.css";
 import { useLocation } from "react-router-dom";
 
@@ -45,7 +45,7 @@ const scrollWithOffset = (el) => {
 
 export default function Toc({ toggleMenu }) {
   const [currentId, setCurrentId] = useState("");
-  const [headingEls, setHeadingEls] = useState([]);
+  const headingElsRef = useRef([]);
   const location = useLocation();
 
   useEffect(() => {
@@ -74,10 +74,10 @@ export default function Toc({ toggleMenu }) {
       }
     });
 
-    setHeadingEls(result);
-
+    headingElsRef.current = result;
     return () => {
       observer.disconnect();
+    
     };
   }, [location.pathname]);
 
@@ -120,5 +120,5 @@ export default function Toc({ toggleMenu }) {
     );
   };
 
-  return <div className={styles.wrap}>{renderToc(headingEls)}</div>;
+  return <div className={styles.wrap}>{renderToc(headingElsRef.current)}</div>;
 }
