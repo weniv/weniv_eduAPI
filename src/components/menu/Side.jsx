@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./Side.module.css";
 import ToggleClose from "../../assets/icon-side-close-left.svg";
 import ToggleOpen from "../../assets/icon-chapter.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Nav from "./Nav";
 import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
@@ -11,14 +11,14 @@ const Side = (menudata) => {
   const slideRef = useRef(null);
   const [isMenuShow, setIsMenuShow] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-
-  // 화면 크기에 따른 메뉴 상태 관리 및 로컬 스토리지 저장
+  const location = useLocation();
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setViewportWidth(width);
       if (width <= 1024 && isMenuShow) {
         setIsMenuShow(false);
+        document.body.style.overflow = "auto";
         localStorage.setItem("toc", "false");
       }
     };
@@ -31,8 +31,19 @@ const Side = (menudata) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    setIsMenuShow(false);
+    document.body.style.overflow = "auto";
+    localStorage.setItem("toc", "false");
+  }, [location.pathname]);
+
   const toggleMenu = () => {
     setIsMenuShow(!isMenuShow);
+    if (!isMenuShow) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
     localStorage.setItem("toc", !isMenuShow ? "true" : "false");
   };
 
@@ -54,7 +65,7 @@ const Side = (menudata) => {
               <span className="a11y-hidden">목차 메뉴 접기</span>
             </button>
           </div>
-          {viewportWidth <= 1024 && <>{<div className={styles.dim}></div>}</>}
+          {viewportWidth <= 1024 && <div className={styles.dim}></div>}
         </>
       )}
 
