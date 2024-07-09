@@ -13,17 +13,6 @@ const Header = ({ type = "null" }) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const isActive = (path) => {
-    if (path === "/") {
-      return location.pathname === path;
-    }
-    return location.pathname.startsWith(path);
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   useEffect(() => {
     const handleResize = () => {
       setViewportWidth(window.innerWidth);
@@ -33,6 +22,17 @@ const Header = ({ type = "null" }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === path;
+    }
+    return location.pathname.startsWith(path);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -60,32 +60,25 @@ const Header = ({ type = "null" }) => {
             ) : (
               <>
                 <LanguageBtn />
-                <div className={styles.nav_icon} onClick={toggleDropdown}>
-                  <button className={styles.closeMenuBtn}>
-                    <img src={MenuIcon} alt="메뉴 열기 아이콘" />
-                  </button>
-                  {isDropdownOpen && (
-                    <ul
-                      className={`${styles.nav_modal} ${
-                        isDropdownOpen ? styles.show : ""
-                      }`}
-                    >
-                      <li>
-                        <Link to="/" onClick={() => setIsDropdownOpen(false)}>
-                          eduAPI 소개
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/eduAPI"
-                          onClick={() => setIsDropdownOpen(false)}
-                        >
-                          CRUD API 명세서
-                        </Link>
-                      </li>
-                    </ul>
-                  )}
-                </div>
+
+                <button className={styles.menuBtn} onClick={toggleDropdown}>
+                  <img src={MenuIcon} alt="" />
+                  <span className="a11y-hidden">메뉴</span>
+                </button>
+                {isDropdownOpen && (
+                  <ul
+                    className={`${styles.nav_modal} ${
+                      isDropdownOpen ? styles.show : ""
+                    }`}
+                  >
+                    <li>
+                      <Link to="/">eduAPI 소개</Link>
+                    </li>
+                    <li>
+                      <Link to="/eduAPI">CRUD API 명세서</Link>
+                    </li>
+                  </ul>
+                )}
               </>
             )}
           </nav>

@@ -5,15 +5,16 @@
   position: relative;
   background-color: var(--W-background);
 }
+
 .sub__content {
   flex-grow: 1;
   background-color: var(--W-background);
 }
 
 @media screen and (max-width: 1024px) {
-  /* .sub {
+  .sub {
     display: block;
-  } */
+  }
 }
 .content__wrap {
   width: 100%;

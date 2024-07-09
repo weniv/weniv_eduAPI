@@ -41,11 +41,14 @@ const Aside = () => {
         <h3>목차</h3>
         <button className={styles.btnClose} onClick={toggleMenu}>
           {viewportWidth > 1024 ? (
-            <img src={CloseIcon} alt="목차 메뉴 접기" />
+            <>
+              <img src={CloseIcon} alt="" />
+              <span className="a11y-hidden">목차 메뉴 열기</span>
+            </>
           ) : (
             <img
               src={Toggle}
-              alt="목차 메뉴 접기"
+              alt=""
               className={
                 isToggled ? styles.rotateUpIcon : styles.rotateDownIcon
               }

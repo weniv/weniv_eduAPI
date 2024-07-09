@@ -4,6 +4,7 @@ import BreadCrumb from "../breadcrumb/Breadcrumb";
 import MarkdownContent from "./MarkdownContent";
 import menuData from "../../data/menu/eduAPI.json";
 import Aside from "../menu/Aside";
+import AsideMobile from "../menu/AsideMobile";
 import styles from "./PageLayout.module.css";
 import Side from "../menu/Side";
 
@@ -26,6 +27,7 @@ const PageLayout = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   // url에 따라 markdown 파일 경로 설정
   useEffect(() => {
     let mdPath = "";
@@ -69,9 +71,10 @@ const PageLayout = () => {
   }, []);
 
   return (
-    <>
+    <div className={styles.sub}>
       <Side data={menuData} />
       <div className={styles.layout}>
+        {viewportWidth <= 1024 ? <AsideMobile /> : null}
         {viewportWidth > 1024 ? (
           <BreadCrumb
             data={path.split("/").filter(Boolean).slice(1)}
@@ -85,10 +88,10 @@ const PageLayout = () => {
             markdownPath={markdownPath}
             onContentLoad={handleContentLoad}
           />
-          {isHeading ? <Aside /> : null}
+          {viewportWidth > 1024 && isHeading ? <Aside /> : null}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

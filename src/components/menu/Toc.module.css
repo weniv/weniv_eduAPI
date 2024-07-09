@@ -3,7 +3,7 @@
   max-height: 26rem;
 }
 .wrap > ol > li:first-child {
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 }
 .wrap > ol > li:last-child {
   padding-bottom: 0.5rem;
@@ -26,7 +26,7 @@
   }
 }
 .toc > li {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 .toc > li > a {
   padding-left: 2rem;
