@@ -55,11 +55,11 @@ const Header = ({ type = "null" }) => {
                     <Link to="/eduAPI">CRUD API 명세서</Link>
                   </li>
                 </ul>
-                <LanguageBtn />
+                {/* <LanguageBtn /> */}
               </>
             ) : (
               <>
-                <LanguageBtn />
+                {/* <LanguageBtn /> */}
 
                 <button className={styles.menuBtn} onClick={toggleDropdown}>
                   <img src={MenuIcon} alt="" />

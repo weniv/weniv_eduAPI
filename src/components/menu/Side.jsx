@@ -12,6 +12,7 @@ const Side = (menudata) => {
   const [isMenuShow, setIsMenuShow] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const location = useLocation();
+
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -22,29 +23,34 @@ const Side = (menudata) => {
         localStorage.setItem("toc", "false");
       }
     };
+
     window.addEventListener("resize", handleResize);
 
     // 초기 로드 시 상태 설정
     if (viewportWidth > 1024 && localStorage.getItem("toc") === "true") {
       setIsMenuShow(true);
     }
+
+    // 컴포넌트 언마운트 시 리스너 제거
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [viewportWidth, isMenuShow]);
 
   useEffect(() => {
-    setIsMenuShow(false);
-    document.body.style.overflow = "auto";
-    localStorage.setItem("toc", "false");
-  }, [location.pathname]);
+    // URL 경로가 변경될 때 사이드바 상태를 모바일에서만 업데이트
+    if (viewportWidth <= 1024) {
+      setIsMenuShow(false);
+      document.body.style.overflow = "auto";
+      localStorage.setItem("toc", "false");
+    }
+  }, [location.pathname, viewportWidth]); // viewportWidth 의존성 추가
 
   const toggleMenu = () => {
-    setIsMenuShow(!isMenuShow);
-    if (!isMenuShow) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    localStorage.setItem("toc", !isMenuShow ? "true" : "false");
+    setIsMenuShow((prevIsMenuShow) => {
+      const newIsMenuShow = !prevIsMenuShow;
+      document.body.style.overflow = newIsMenuShow ? "hidden" : "auto";
+      localStorage.setItem("toc", newIsMenuShow ? "true" : "false");
+      return newIsMenuShow;
+    });
   };
 
   return (
@@ -65,7 +71,9 @@ const Side = (menudata) => {
               <span className="a11y-hidden">목차 메뉴 접기</span>
             </button>
           </div>
-          {viewportWidth <= 1024 && <div className={styles.dim}></div>}
+          {viewportWidth <= 1024 && (
+            <div className={styles.dim} onClick={toggleMenu}></div>
+          )}
         </>
       )}
 

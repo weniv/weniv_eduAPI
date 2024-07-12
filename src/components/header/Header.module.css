@@ -7,7 +7,6 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 7rem;
   background-color: var(--W-background);
   box-sizing: border-box;
 }
@@ -18,6 +17,7 @@ header {
   justify-content: center;
   width: 100%;
   max-width: 1190px;
+  height: 7rem;
 }
 
 .header_top > a {
