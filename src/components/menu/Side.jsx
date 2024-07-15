@@ -47,7 +47,15 @@ const Side = (menudata) => {
   const toggleMenu = () => {
     setIsMenuShow((prevIsMenuShow) => {
       const newIsMenuShow = !prevIsMenuShow;
-      document.body.style.overflow = newIsMenuShow ? "hidden" : "auto";
+      if (newIsMenuShow) {
+        // 사이드바가 열릴 때
+        if (viewportWidth <= 1024) {
+          document.body.style.overflow = "hidden";
+        }
+      } else {
+        // 사이드바가 닫힐 때
+        document.body.style.overflow = "auto";
+      }
       localStorage.setItem("toc", newIsMenuShow ? "true" : "false");
       return newIsMenuShow;
     });

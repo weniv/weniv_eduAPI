@@ -38,46 +38,68 @@ const getIntersectionObserver = (setState) => {
 
 // 스크롤 위치 조정 함수
 const scrollWithOffset = (el) => {
-  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yCoordinate = el.getBoundingClientRect().top + window.scrollY;
   const yOffset = -70; // header의 높이에 따라 이 값을 조정
   window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
 };
 
 export default function Toc({ toggleMenu }) {
   const [currentId, setCurrentId] = useState("");
+  const [headings, setHeadings] = useState([]);
   const headingElsRef = useRef([]);
   const location = useLocation();
 
   useEffect(() => {
     const observer = getIntersectionObserver(setCurrentId);
-    const headingElements = Array.from(document.querySelectorAll("h4, h5, h6"));
-    const result = [];
 
-    let h4Obj = null;
-    let h5Obj = null;
+    const handleMutation = () => {
+      const headingElements = Array.from(
+        document.querySelectorAll("h4, h5, h6")
+      );
+      const result = [];
+      headingElsRef.current = []; // 초기화
+      setCurrentId(""); // 초기화
+      let h4Obj = null;
+      let h5Obj = null;
 
-    headingElements.forEach((heading) => {
-      observer.observe(heading);
-      const title = heading.textContent;
-      const tagName = heading.tagName.toLowerCase();
-      const href = title;
+      headingElements.forEach((heading) => {
+        observer.observe(heading);
+        const title = heading.textContent;
+        const tagName = heading.tagName.toLowerCase();
+        const href = title;
 
-      heading.id = href;
-      if (tagName === "h4") {
-        h4Obj = { title, href, section: [] };
-        result.push(h4Obj);
-      } else if (tagName === "h5") {
-        h5Obj = { title, href, section: [] };
-        h4Obj.section.push(h5Obj);
-      } else if (tagName === "h6") {
-        h5Obj.section.push({ title, href, section: [] });
-      }
+        heading.id = href;
+        if (tagName === "h4") {
+          h4Obj = { title, href, section: [] };
+          result.push(h4Obj);
+        } else if (tagName === "h5") {
+          h5Obj = { title, href, section: [] };
+          h4Obj.section.push(h5Obj);
+        } else if (tagName === "h6") {
+          h5Obj.section.push({ title, href, section: [] });
+        }
+      });
+
+      setHeadings(result);
+      headingElsRef.current = result; // 업데이트
+    };
+
+    const mutationObserver = new MutationObserver((mutationsList) => {
+      handleMutation();
     });
 
-    headingElsRef.current = result;
+    // 옵저버
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // 초기 호출
+    handleMutation();
+
     return () => {
       observer.disconnect();
-    
+      mutationObserver.disconnect();
     };
   }, [location.pathname]);
 
@@ -120,5 +142,5 @@ export default function Toc({ toggleMenu }) {
     );
   };
 
-  return <div className={styles.wrap}>{renderToc(headingElsRef.current)}</div>;
+  return <div className={styles.wrap}>{renderToc(headings)}</div>;
 }
