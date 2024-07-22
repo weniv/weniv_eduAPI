@@ -56,7 +56,7 @@ export const fetchMarkdownContent = async (markdownPath) => {
   try {
     const response = await fetch(markdownPath);
     if (!response.ok) {
-      throw new Error("🚨 파일 경로 확인하기.");
+      throw new Error(`🚨 파일 경로 확인하기 `);
     }
     return await response.text();
   } catch (error) {

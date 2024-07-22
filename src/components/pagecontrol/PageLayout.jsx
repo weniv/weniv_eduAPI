@@ -32,9 +32,9 @@ const PageLayout = () => {
   useEffect(() => {
     let mdPath = "";
     if (path === "/eduAPI") {
-      mdPath = `${process.env.PUBLIC_URL}/_md/eduAPI.md`;
+      mdPath = `${process.env.PUBLIC_URL}/md/eduAPI.md`;
     } else {
-      mdPath = `${process.env.PUBLIC_URL}/_md${path.replace("/eduAPI", "")}.md`;
+      mdPath = `${process.env.PUBLIC_URL}/md${path.replace("/eduAPI", "")}.md`;
     }
     setMarkdownPath(mdPath);
   }, [path]);
