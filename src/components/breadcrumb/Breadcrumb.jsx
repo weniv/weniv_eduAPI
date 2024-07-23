@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import styles from "./Breadcrumb.module.css";
 
 const Breadcrumb = ({ data, title, subtitle }) => {
-
   const buildBreadcrumb = () => {
     const items = [];
-    let currentPath = "";
+    let currentPath = "/eduAPI";
 
     for (let index = 0; index < data.length; index++) {
       const part = data[index];
