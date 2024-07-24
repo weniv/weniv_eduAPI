@@ -96,5 +96,5 @@ body {
   font-family: "Pretendard";
   letter-spacing: -0.01em;
   min-height: 100vh;
-  overflow-y: scroll;
+  overflow-y: scroll; /* 수직 스크롤바 항상 표시 */
 }
