@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Scrollbar from "./Scrollbar";
 import styles from "./Header.module.css";
 import Logo from "../../assets/weniv-api-logo.svg";
 import MenuIcon from "../../assets/hamburger.svg";
-import Xicon from "../../assets/icon-X.svg";
-
-import { Link, useLocation } from "react-router-dom";
-import LanguageBtn from "../button/LanguageBtn";
 
 const Header = ({ type = "null" }) => {
   const location = useLocation();

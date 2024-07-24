@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./AsideMobile.module.css";
-import CloseIcon from "../../assets/icon-side-close-left.svg";
-import OpenIcon from "../../assets/icon-chapter.svg";
 import Toggle from "../../assets/icon-down.svg";
 import Toc from "./Toc";
 
@@ -9,17 +7,17 @@ const AsideMobile = () => {
   const [isMenuShow, setIsMenuShow] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
 
-  const menuRef = useRef(null);
-  const lastBtn = useRef(null);
+  // const menuRef = useRef(null);
+  // // const lastBtn = useRef(null);
 
-  const handleFocusFirst = (e) => {
-    if (!e.shiftKey && e.key === "Tab") {
-      e.preventDefault();
+  // const handleFocusFirst = (e) => {
+  //   if (!e.shiftKey && e.key === "Tab") {
+  //     e.preventDefault();
 
-      const firstItem = menuRef.current.querySelector("a");
-      firstItem.focus();
-    }
-  };
+  //     const firstItem = menuRef.current.querySelector("a");
+  //     firstItem.focus();
+  //   }
+  // };
   const toggleMenu = () => {
     if (isMenuShow) {
       // 닫힘

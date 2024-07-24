@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Main from "../page/Main";
 import Landing from "../page/Landing";
-import PageLayout from "../components/pagecontrol/PageLayout";
+import PageLayout from "../components/pagelayout/PageLayout";
 import Notfound from "../page/Notfound";
 import menuData from "../data/menu/eduAPI.json";
 
