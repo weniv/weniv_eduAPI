@@ -36,6 +36,7 @@ const Side = (menudata) => {
   }, [viewportWidth, isMenuShow]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     // URL 경로가 변경될 때 사이드바 상태를 모바일에서만 업데이트
     if (viewportWidth <= 1024) {
       setIsMenuShow(false);
