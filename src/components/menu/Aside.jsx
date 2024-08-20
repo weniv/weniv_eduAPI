@@ -3,6 +3,7 @@ import styles from "./Aside.module.css";
 import CloseIcon from "../../assets/icon-side-close-left.svg";
 import OpenIcon from "../../assets/icon-chapter.svg";
 import Toggle from "../../assets/icon-down.svg";
+import SubBanner from "./SubBanner";
 import Toc from "./Toc";
 
 const Aside = () => {
@@ -38,7 +39,7 @@ const Aside = () => {
   return isMenuShow ? (
     <aside className={styles.aside}>
       <div className={styles.sublist}>
-        <h3>목차</h3>
+        <h3 className={styles.asideTitle}>목차</h3>
         <button className={styles.btnClose} onClick={toggleMenu}>
           {viewportWidth > 1024 ? (
             <>
@@ -58,6 +59,7 @@ const Aside = () => {
         </button>
         <Toc />
       </div>
+      <SubBanner />
     </aside>
   ) : (
     <aside className={`${styles.aside} ${styles.hide}`}>

@@ -46,7 +46,7 @@
   border-radius: 1rem;
 }
 
-.aside h3 {
+.asideTitle {
   flex-shrink: 0;
   height: 5rem;
   display: flex;
