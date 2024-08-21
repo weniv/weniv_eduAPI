@@ -10,10 +10,7 @@
 .tocWrap {
   position: relative;
 }
-/* .tocWrap a:focus {
-  position: relative;
-  z-index: 101;
-} */
+
 .tocTitle,
 .tocBar {
   width: 100%;
@@ -26,41 +23,18 @@
   box-sizing: border-box;
 }
 
-/* .tocTitle {
-  padding: 0 1.7rem;
-  background-color: var(--W-background);
-  border-radius: 1rem 1rem 0 0;
-  overflow: hidden; 
-} */
-
 .tocBar {
   justify-content: space-between;
   border-radius: 1rem;
 
   background-color: var(--W-background);
   border: 1px solid var(--W-grayLv2);
-  /* 
-
-
-  &.clicked img {
-    animation: rotate2 0.3s;
-  }
-
-  &:hover {
-    svg {
-      background-color: var(--background);
-      border-radius: 0.4rem;
-    }
-  } */
 }
 
 .tocBar img {
   transition: all 0.3s;
 }
-.opened {
-  /* border: 1px solid var(--W-grayLv2);
-  border-bottom: none; */
-}
+
 .opened img {
   transition: all 0.3s;
   transform: rotate(180deg);
@@ -78,48 +52,6 @@
   box-sizing: border-box;
 }
 
-/* .tocCloseBtn {
-  position: absolute;
-  height: 4rem;
-  top: 0;
-  left: 0;
-  border-radius: 1rem 1rem 0 0;
-
-  border: 1px solid var(--W-grayLv2);
-  border-width: 1px 1px 0 1px;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 1.6rem;
-
-  overflow: hidden;
-  background-color: aqua;
+.toc .subBanner {
+  margin: auto auto 1.6rem 1.6rem;
 }
-.tocCloseBtn:focus {
-  z-index: 100;
-}
-
-.tocCloseBtn img {
-  transition: all 0.3s;
-  padding: 0.6rem;
-  border-radius: 0.625em;
-  animation: rotate 0.3s;
-}
-.tocCloseBtn:hover img {
-  background-color: var(--W-background);
-  border-radius: 0.4rem;
-}
-
-
-/* .positionWrap {
-  position: absolute;
-  top: 4rem;
-  z-index: 100;
-  width: 100%;
-  background-color: var(--W-background);
-  border: 1px solid var(--W-grayLv2);
-  border-width: 0 1px 1px 1px;
-  border-radius: 0 0 1rem 1rem;
-  box-sizing: border-box;
-} */

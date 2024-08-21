@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./AsideMobile.module.css";
 import Toggle from "../../assets/icon-down.svg";
 import Toc from "./Toc";
+import SubBanner from "./SubBanner";
 
 const AsideMobile = () => {
   const [isMenuShow, setIsMenuShow] = useState(false);
@@ -51,17 +52,10 @@ const AsideMobile = () => {
             </button>
             <div className={styles.positionWrap}>
               <Toc toggleMenu={toggleMenu} />
+              <div className={styles.subBanner}>
+                <SubBanner />
+              </div>
             </div>
-            {/* <button
-              type="button"
-              className={styles.tocCloseBtn}
-              onClick={toggleMenu}
-              onKeyDown={handleFocusFirst}
-              ref={lastBtn}
-            >
-              <img src={Toggle} alt="" />
-              <span className="a11y-hidden">목차 닫기</span>
-            </button> */}
           </>
         )}
       </div>
