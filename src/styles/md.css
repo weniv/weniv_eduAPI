@@ -5,7 +5,7 @@
   /* 제목 */
   .title {
     font-size: 2.22em;
-    border-bottom: 2px solid var(--W-grayLv2);
+    border-bottom: 2px solid var(--grayLv2);
     padding-bottom: 0.2em;
     margin-bottom: 0.8em;
     line-height: 1.4;
@@ -26,44 +26,18 @@
   h6 {
     font-size: 1.1em;
   }
-  /* 
-  h4,
-  h5,
-  h6 {
-    margin-top: -$titleGap;
-    padding-top: $titleGap;
-    margin-bottom: 0.5em;
-  } */
-
-  /* ul,
-  ol,
-  p,
-  img,
-  blockquote,
-  div,
-  table {
-  
-    & + h4,
-    & + h5 {
-      margin-top: calc(2em - $titleGap);
-    }
-    & + h6 {
-      margin-top: calc(1.5em - $titleGap);
-    }
-  } */
-
   /* 구분선 */
   hr {
     border: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--W-grayLv2);
+    background-color: var(--grayLv2);
     margin: 3em 0;
   }
 
   /* 링크 */
   a:not(.btn-link) {
-    color: var(--W-primary);
+    color: var(--primary);
     text-decoration: underline;
     display: inline-flex;
   }
@@ -72,7 +46,7 @@
     display: block;
     max-height: 50rem;
     margin: 1em auto;
-    border: 5px solid var(--W-grayLv1);
+    border: 5px solid var(--grayLv1);
   }
   /* 이미지 */
   figure {
@@ -84,7 +58,7 @@
     }
     figcaption {
       text-align: center;
-      color: var(--W-grayLv3A11y);
+      color: var(--grayLv3A11y);
       /* font-size: fcSize(12, 14); */
     }
   }
@@ -92,7 +66,7 @@
   /* 인용문 */
   blockquote {
     margin: 1em 0;
-    border-left: 4px solid var(--W-primary);
+    border-left: 4px solid var(--primary);
     padding: 0.8em 1.2em;
   }
 
@@ -102,13 +76,13 @@
 
     border-collapse: collapse;
     thead {
-      background-color: var(--W-grayLv1);
+      background-color: var(--grayLv1);
       font-weight: bold;
     }
     th,
     td {
       text-align: left;
-      border: 1px solid var(--W-grayLv2);
+      border: 1px solid var(--grayLv2);
       padding: 0.2em 1em;
       word-break: break-all;
     }
@@ -117,7 +91,7 @@
   /* 코드 */
   :not(pre) > code {
     font: inherit;
-    background-color: var(--W-activation);
+    background-color: var(--activation);
     color: var(--primaryA11y);
     padding: 0 0.3em;
     border-radius: 0.2em;
@@ -140,11 +114,6 @@
     }
   }
 
-  /* pre,
-  code {
-    font-family: var(--code), monospace;
-  } */
-
   /* 리스트 */
   ul,
   ol {
@@ -152,7 +121,7 @@
 
     li {
       &::marker {
-        color: var(--W-primary);
+        color: var(--primary);
         font-weight: bold;
         letter-spacing: -0.05em;
         font-size: 0.95em;
@@ -205,11 +174,6 @@
     }
   }
 
-  /* li + li,
-  p + p {
-    margin-top: fcSize(4, 10);
-  } */
-
   ol + p,
   ul + p {
     margin-top: 1em;
@@ -217,7 +181,7 @@
 
   /* 커스텀 CSS */
   .box {
-    background-color: var(--W-grayLv1);
+    background-color: var(--grayLv1);
     padding: 2em 3em;
     border-radius: 1rem;
 
@@ -228,7 +192,7 @@
       margin-top: 0;
     }
     .btn-link {
-      background-color: var(--W-background);
+      background-color: var(--background);
     }
   }
 
@@ -244,8 +208,8 @@
     align-items: center;
     gap: 1em;
 
-    background-color: var(--W-grayLv1);
-    border: 1px solid var(--W-activation);
+    background-color: var(--grayLv1);
+    border: 1px solid var(--activation);
     border-radius: 1rem;
     transition: all 0.3s;
     line-height: 1.4;
@@ -265,9 +229,8 @@
       width: 2.8em;
       height: 100%;
 
-      background: var(--W-primary) url("../assets/favicon.svg") no-repeat center /
+      background: var(--primary) url("../assets/favicon.svg") no-repeat center /
         80%;
-      /* border-radius: $borderRadius 0 0 $borderRadius; */
 
       position: absolute;
       left: 0;
@@ -287,7 +250,7 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--W-activation);
+        background-color: var(--activation);
 
         &::after {
           animation: newwindow 0.3s infinite alternate;
@@ -321,8 +284,8 @@
     }
     a {
       font-size: fcSize(16, 18);
-      color: var(--W-surface);
-      text-decoration: underline var(--W-activation);
+      color: var(--surface);
+      text-decoration: underline var(--activation);
       margin-left: 0.3em;
     }
   }
@@ -333,7 +296,7 @@
     }
   }
   .cols2 p {
-    border: 5px solid var(--W-grayLv1);
+    border: 5px solid var(--grayLv1);
     img {
       border: 0;
       margin: 0;

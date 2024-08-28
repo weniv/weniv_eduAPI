@@ -20,17 +20,17 @@
 
 .fold div:hover,
 .notFold:hover {
-  background-color: var(--W-activation);
+  background-color: var(--activation);
 }
 
 .fold > ol > li:hover,
 .notFold > ol > li:hover {
-  background-color: var(--W-activation);
+  background-color: var(--activation);
 }
 
 .fold div:hover button,
 .notFold:hover button {
-  background-color: var(--W-background);
+  background-color: var(--background);
 }
 
 .menu a {
@@ -42,8 +42,8 @@
   outline-offset: -1px;
 }
 .menu.active {
-  background-color: var(--W-grayLv1);
-  color: var(--W-primaryA11y);
+  background-color: var(--grayLv1);
+  color: var(--primaryA11y);
   font-weight: 700;
 }
 /* 1depth */

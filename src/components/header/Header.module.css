@@ -7,7 +7,7 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: var(--W-background);
+  background-color: var(--background);
   box-sizing: border-box;
 }
 
@@ -36,14 +36,14 @@ header {
   gap: 4rem;
   font-size: 1.6rem;
   font-weight: 500;
-  color: var(--W-surface);
+  color: var(--surface);
   margin-right: 2rem;
 }
 .nav_list li {
   cursor: pointer;
 }
 .active {
-  color: var(--W-primary);
+  color: var(--primary);
 }
 .menuBtn {
   width: 4.2rem;
@@ -80,7 +80,7 @@ header {
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 22px;
-    background-color: var(--W-background);
+    background-color: var(--background);
     box-shadow: var(--EffectShadow);
     z-index: 2000;
   }
@@ -90,8 +90,8 @@ header {
   }
 
   .nav_modal li:hover {
-    background-color: var(--W-activation);
-    color: var(--W-primary);
+    background-color: var(--activation);
+    color: var(--primary);
   }
 
   .nav_modal li a {

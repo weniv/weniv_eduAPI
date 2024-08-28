@@ -27,8 +27,8 @@
   justify-content: space-between;
   border-radius: 1rem;
 
-  background-color: var(--W-background);
-  border: 1px solid var(--W-grayLv2);
+  background-color: var(--background);
+  border: 1px solid var(--grayLv2);
 }
 
 .tocBar img {
@@ -44,8 +44,8 @@
   top: 3.5rem;
   width: 100%;
   z-index: 100;
-  background-color: var(--W-background);
-  border: 1px solid var(--W-grayLv2);
+  background-color: var(--background);
+  border: 1px solid var(--grayLv2);
   border-width: 0 1px 1px 1px;
   border-radius: 0 0 1rem 1rem;
   padding: 0 1.6rem 0 0;

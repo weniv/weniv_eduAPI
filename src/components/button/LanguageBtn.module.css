@@ -1,5 +1,5 @@
 .active {
-  color: var(--W-primary);
+  color: var(--primary);
 }
 
 .lang_btn {
@@ -23,11 +23,11 @@
 }
 
 .lang_btn:hover {
-  background-color: var(--W-activation);
+  background-color: var(--activation);
 }
 
 .lang_btn.active {
-  background-color: var(--W-activation);
+  background-color: var(--activation);
   background-image: url("../../assets/icon-active-world.svg");
 }
 
@@ -37,9 +37,9 @@
   display: none;
   width: 8rem;
   box-shadow: var(--EffectShadow);
-  background-color: var(--W-background);
+  background-color: var(--background);
   padding: 0.8rem 0;
-  border: 1px solid var(--W-grayLv2);
+  border: 1px solid var(--grayLv2);
   border-radius: 1rem;
 }
 
@@ -50,12 +50,12 @@
 .lang_modal li {
   padding: 1rem;
   text-align: center;
-  color: var(--W-grayLv3);
+  color: var(--grayLv3);
   cursor: pointer;
 }
 .lang_modal li.active {
-  color: var(--W-primary);
+  color: var(--primary);
 }
 .lang_modal li:hover {
-  background-color: var(--W-activation);
+  background-color: var(--activation);
 }

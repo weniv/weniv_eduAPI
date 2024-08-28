@@ -17,12 +17,12 @@
 }
 .toc a.active {
   font-weight: bold;
-  color: var(--W-primary);
-  background-color: var(--W-activation);
+  color: var(--primary);
+  background-color: var(--activation);
 }
 @media (hover: hover) {
   .toc a:not(.active):hover {
-    background-color: var(--W-grayLv1);
+    background-color: var(--grayLv1);
   }
 }
 .toc > li {

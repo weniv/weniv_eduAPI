@@ -73,16 +73,16 @@ pre {
 /* 색상  ------------------------------------------------------- */
 
 :root {
-  --W-primary: #2e6ff2;
-  --W-primaryA11y: #2861d3;
-  --W-background: #fff;
-  --W-surface: #121314;
-  --W-grayLv1: #f3f5fa;
-  --W-grayLv2: #d9dbe0;
-  --W-grayLv3: #8d9299;
-  --W-grayLv3A11y: #6c7074;
-  --W-grayLv4: #47494d;
-  --W-activation: #dee8ff;
+  --primary: #2e6ff2;
+  --primaryA11y: #2861d3;
+  --background: #fff;
+  --surface: #121314;
+  --grayLv1: #f3f5fa;
+  --grayLv2: #d9dbe0;
+  --grayLv3: #8d9299;
+  --grayLv3A11y: #6c7074;
+  --grayLv4: #47494d;
+  --activation: #dee8ff;
   --EffectShadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
 }
 

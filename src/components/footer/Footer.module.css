@@ -3,7 +3,7 @@ footer {
   text-align: center;
   font-size: 1.2rem;
   border-top: 1px solid var(--grayLv2);
-  background-color: var(--W-grayLv1);
+  background-color: var(--grayLv1);
 }
 .logo {
   width: 24.2rem;
@@ -29,7 +29,7 @@ footer {
 }
 
 .wenivInfo {
-  color: var(--W-grayLv4);
+  color: var(--grayLv4);
   display: flex;
   justify-content: space-between;
 }
@@ -60,7 +60,7 @@ footer {
   width: 1px;
   height: 0.8em;
   vertical-align: middle;
-  background-color: var(--W-grayLv4);
+  background-color: var(--grayLv4);
 }
 
 .info_toggleBtn {

@@ -3,7 +3,7 @@
   width: 100%;
   min-width: 390px;
   height: 60rem;
-  background-color: var(--W-activation);
+  background-color: var(--activation);
 }
 
 .banner {
@@ -24,7 +24,7 @@
   margin-bottom: 1.2rem;
 }
 .banner_title span {
-  color: var(--W-primary);
+  color: var(--primary);
 }
 .banner_intro {
   font-size: 1.8rem;

@@ -12,12 +12,12 @@
   padding: 1.1rem 2rem;
   border-radius: 1rem;
 
-  background-color: var(--W-primary);
-  color: var(--W-background);
+  background-color: var(--primary);
+  color: var(--background);
 }
 
 .white {
-  background-color: var(--W-background);
-  color: var(--W-surface);
-  border: 1px solid var(--W-grayLv2);
+  background-color: var(--background);
+  color: var(--surface);
+  border: 1px solid var(--grayLv2);
 }

@@ -8,9 +8,9 @@
   align-items: flex-start;
   min-width: 32rem;
   height: calc(100vh - 7.4rem);
-  background-color: var(--W-background);
+  background-color: var(--background);
   box-sizing: border-box;
-  border-right: 1px solid var(--W-grayLv2);
+  border-right: 1px solid var(--grayLv2);
 }
 .side_title {
   width: 100%;
@@ -43,7 +43,7 @@
   min-width: 4.2rem;
   height: 4.2rem;
   transition: all 0.5s;
-  background-color: var(--W-background);
+  background-color: var(--background);
   margin: 0.4rem 0.4rem 0.4rem 0.4rem;
 }
 
@@ -54,11 +54,11 @@
 }
 
 .footer {
-  border-top: 1px solid var(--W-grayLv2);
+  border-top: 1px solid var(--grayLv2);
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: var(--W-background);
+  background-color: var(--background);
   padding: 2rem 0;
 }
 .slideIn {
@@ -95,7 +95,7 @@
     position: sticky;
     top: 0.4rem;
     box-shadow: 0 0.4rem 2rem 0 rgba(0, 0, 0, 0.04);
-    border: 1px solid var(--W-grayLv2) !important;
+    border: 1px solid var(--grayLv2) !important;
     border-radius: 1rem;
   }
   .side {
@@ -104,8 +104,8 @@
     z-index: 2000;
     min-width: 23.5rem;
     height: 100vh;
-    border-right: 1px solid var(--W-grayLv2);
-    background-color: var(--W-background);
+    border-right: 1px solid var(--grayLv2);
+    background-color: var(--background);
   }
   .dim {
     position: fixed;
