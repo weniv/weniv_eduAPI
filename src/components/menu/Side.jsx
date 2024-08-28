@@ -76,7 +76,7 @@ const Side = (menudata) => {
               <ListSNS />
             </footer>
             <button className={styles.btnClose} onClick={toggleMenu}>
-              <img src={ToggleClose} alt="목차 메뉴 접기" />
+              <img src={ToggleClose} alt="" />
               <span className="a11y-hidden">목차 메뉴 접기</span>
             </button>
           </div>
@@ -93,7 +93,7 @@ const Side = (menudata) => {
         }`}
         onClick={toggleMenu}
       >
-        <img src={ToggleOpen} alt="목차 메뉴 열기" />
+        <img src={ToggleOpen} alt="" />
         <span className="a11y-hidden">목차 메뉴 열기</span>
       </button>
     </>

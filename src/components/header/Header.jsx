@@ -37,7 +37,7 @@ const Header = ({ type = "null" }) => {
         <div className={styles.header_top}>
           <Link to="/">
             <h1 className={styles.logo}>
-              <img src={Logo} alt="로고" />
+              <img src={Logo} alt="weniv eduAPI" />
               <span className="a11y-hidden">WenivEduApi</span>
             </h1>
           </Link>

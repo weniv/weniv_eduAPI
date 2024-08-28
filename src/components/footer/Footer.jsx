@@ -29,7 +29,7 @@ const Footer = () => {
         <div className={styles.intro_footer}>
           <section className={styles.footer_top}>
             <h2 className={styles.logo}>
-              <img src={Logo} alt="로고" />
+              <img src={Logo} alt="weniv eduAPI" />
               <span className="a11y-hidden">WenivEduApi</span>
             </h2>
             <Copyright />
