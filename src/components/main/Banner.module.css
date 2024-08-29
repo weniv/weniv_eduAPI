@@ -1,7 +1,6 @@
 .section {
   position: relative;
   width: 100%;
-  min-width: 390px;
   height: 60rem;
   background-color: var(--activation);
 }
@@ -36,8 +35,27 @@
   right: 0;
   bottom: 0;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 5.2rem;
+  }
+  .banner_title {
+    font-size: 3.6rem;
+  }
+  .banner_intro {
+    margin-bottom: 2.4rem;
+  }
+  .banner_img {
+    width: 100%;
+    max-width: 60rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
   .section {
     height: 44rem;
   }
@@ -52,8 +70,10 @@
   .banner_intro {
     font-size: 1.6rem;
     word-wrap: keep-all;
+    margin-bottom: 1.2rem;
   }
   .banner_img {
+    width: 100%;
     max-width: 35rem;
     left: 50%;
     transform: translateX(-50%);

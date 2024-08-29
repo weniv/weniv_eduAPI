@@ -70,6 +70,26 @@ pre {
   position: absolute;
 }
 
+.max-width {
+  width: 119rem;
+  margin: auto;
+  max-width: calc(100% - 4rem);
+}
+.sl-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.multi-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
 /* 색상  ------------------------------------------------------- */
 
 :root {

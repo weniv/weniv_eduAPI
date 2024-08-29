@@ -37,7 +37,9 @@
 .center {
   text-align: center;
 }
+
 /* --------------------------------사용대상 */
+
 .target_description {
   font-size: 1.8rem;
   color: var(--grayLv4);
@@ -49,15 +51,20 @@
 
 .target_ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1190px;
+  padding: 0 2.4rem;
   gap: 2.6rem;
   margin-top: 6rem;
-  max-width: 1190px;
 }
 .target_li {
   display: flex;
+  flex-basis: calc(25% - 1.95rem);
   flex-direction: column;
   align-items: center;
   text-align: center;
+  word-break: keep-all;
 }
 .target_li img {
   width: 20rem;
@@ -75,6 +82,30 @@
   line-height: 2.2rem;
   font-weight: 500;
   color: var(--grayLv4);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .target_ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(100% - 5.2rem);
+  }
+  .target_li {
+    flex-basis: calc(50% - 1.3rem);
+  }
+}
+@media screen and (max-width: 767px) {
+  .target_description {
+    font-size: 1.6rem;
+  }
+  .title_section {
+    font-size: 2.4rem;
+  }
+  .target_ul {
+    flex-direction: column;
+    gap: 3.2rem;
+    margin: 0;
+  }
 }
 
 /* ------------------------사용방법 */
@@ -184,20 +215,6 @@
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 3.2rem;
-  }
-
-  /* 사용대상 */
-  .target_description {
-    font-size: 1.6rem;
-  }
-  .title_section {
-    font-size: 2.4rem;
-  }
-  .target_ul {
-    flex-direction: column;
-    gap: 3.2rem;
-    margin: 0;
-    padding: 0 3.2rem;
   }
 
   /* 사용방법 */
