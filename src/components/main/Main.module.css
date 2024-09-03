@@ -8,18 +8,6 @@
   width: 100%;
 }
 
-.main > .section:nth-of-type(2) {
-  background-color: var(--grayLv1);
-  flex-direction: row;
-}
-
-.section > div {
-  max-width: 1190px;
-  display: flex;
-  margin: 0 auto;
-  gap: 8.2rem;
-}
-
 .h2_section {
   display: inline-block;
   padding: 1rem 2rem;
@@ -36,6 +24,17 @@
 }
 .center {
   text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .section {
+    min-width: calc(100% - 4.6rem);
+    padding: 5.2rem 0;
+  }
+  .title_section {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+  }
 }
 
 /* --------------------------------사용대상 */
@@ -54,8 +53,8 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1190px;
-  padding: 0 2.4rem;
   gap: 2.6rem;
+  padding: 0 2.6rem;
   margin-top: 6rem;
 }
 .target_li {
@@ -109,14 +108,30 @@
 }
 
 /* ------------------------사용방법 */
-.guide_img {
-  width: 52rem;
-  flex-shrink: 0;
-  margin: 0 auto;
-  min-width: 342px;
-  object-fit: contain;
+.main > .section:nth-of-type(2) {
+  background-color: var(--grayLv1);
+  flex-direction: row;
 }
 
+.section > div {
+  max-width: 1190px;
+  display: flex;
+  margin: 0 auto;
+  padding-right: 2.4rem;
+  gap: 1rem;
+}
+
+.guide_img {
+  flex: 1;
+  width: 100%;
+  max-width: 52rem;
+  min-width: 342px;
+  height: auto;
+  object-fit: contain;
+}
+.guide_section {
+  flex: 1;
+}
 .guide_title {
   font-size: 2.4rem;
   font-weight: 600;
@@ -152,6 +167,42 @@
   text-decoration: underline;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .guide_title {
+    font-size: 1.6rem;
+  }
+  .guide_description {
+    font-size: 1.2rem;
+  }
+
+  .guide_li {
+    font-size: 1.6rem;
+  }
+
+  .guide_li::before {
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section_guide {
+    flex-direction: column;
+    padding: 0 2.4rem;
+  }
+  .guide_img {
+    min-width: auto;
+  }
+
+  .guide_title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+  .guide_li {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+  }
+}
+
 /* --------------------------------제공기능 */
 .func_ul {
   display: flex;
@@ -159,10 +210,10 @@
   max-width: 1190px;
   gap: 2.6rem;
   margin-top: 6rem;
+  padding: 0 2.4rem;
 }
 
 .func_li {
-  max-width: 278px;
   flex: 1;
 }
 .func_li div {
@@ -170,7 +221,7 @@
   justify-content: center;
   align-items: center;
   width: inherit;
-  height: 28rem;
+  aspect-ratio: 1 / 1;
   border-radius: 3rem;
   background-color: var(--grayLv1);
 }
@@ -188,12 +239,32 @@
   line-height: 2.2rem;
   color: var(--grayLv4);
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .func_ul {
+    gap: 1.3rem;
+  }
 
+  .func_li span {
+    font-size: 1.6rem;
+  }
+  .func_li p {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .func_ul {
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+  .func_li div {
+    width: 24rem;
+  }
+}
 /* api_info */
 
 .api_info {
   background-color: var(--primary);
-  padding: 8rem 0;
+  padding: 8rem 2.4rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -205,43 +276,12 @@
   color: var(--background);
   margin-bottom: 2.4rem;
 }
-
-@media screen and (max-width: 1024px) {
-  .section {
-    min-width: calc(100% - 4.6rem);
-    padding: 5.2rem 0;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .api_info p {
+    font-size: 2rem;
   }
-  .title_section {
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 3.2rem;
-  }
-
-  /* 사용방법 */
-
-  .section_guide {
-    flex-direction: column;
-    padding: 0 2.4rem;
-  }
-  .section > div {
-    gap: 3.2rem;
-  }
-  .guide_title {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-  }
-  .guide_li {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    font-weight: 600;
-  }
-
-  /* 제공기능 */
-  .func_ul {
-    flex-direction: column;
-    margin-top: 4rem;
-  }
-  /* api_info */
+}
+@media screen and (max-width: 767px) {
   .api_info p {
     font-size: 1.8rem;
   }

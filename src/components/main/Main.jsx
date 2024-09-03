@@ -54,7 +54,7 @@ const Main = () => {
       <section className={styles.section}>
         <div className={styles.section_guide}>
           <img src={GuideImg} alt="" className={styles.guide_img} />
-          <div>
+          <div className={styles.guide_section}>
             <h2 className={styles.h2_section}>사용방법</h2>
             <h3 className={styles.title_section}>API 명세서를 확인하세요.</h3>
             <p className={styles.guide_title}>
