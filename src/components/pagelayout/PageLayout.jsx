@@ -67,7 +67,7 @@ const PageLayout = () => {
         document.querySelectorAll("h4, h5, h6")
       );
       setIsHeading(headingElements.length);
-    }, 100); //
+    }, 100);
   }, []);
 
   return (
