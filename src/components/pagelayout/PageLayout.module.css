@@ -17,3 +17,8 @@
   gap: 2rem;
 }
 
+@media screen and (max-width: 767px) {
+  .content {
+    padding: 0;
+  }
+}

@@ -45,6 +45,11 @@
     padding: 2em 3em;
     border-radius: 1rem;
     margin: 1em 0 3em 0;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    max-width: 100%;
   }
 
   pre > code {
@@ -175,6 +180,7 @@
     background-color: var(--grayLv1);
     border-radius: 0.3rem;
     font-size: 0.9em;
+    word-break: break-all;
   }
   /* 링크 */
   .btn-link {
@@ -235,5 +241,10 @@
         background-color: var(--activation);
       }
     }
+  }
+}
+@media screen and (max-width: 767px) {
+  .markdownContent {
+    padding: 2rem 2rem 2rem 0;
   }
 }

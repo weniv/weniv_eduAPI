@@ -65,7 +65,6 @@
   .aside {
     position: sticky;
     top: 0;
-    /* top: 7.8rem; */
     left: 0;
     width: calc(100% - 7.6rem);
   }
@@ -82,29 +81,8 @@
   .btnOpen img {
     margin-right: 1.2rem;
   }
-  @keyframes rotateDown {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
 
-  @keyframes rotateUp {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .rotateDownIcon {
-    animation: rotateDown 0.5s forwards;
-  }
-
-  .rotateUpIcon {
-    animation: rotateUp 0.5s forwards;
+  .rotated {
+    transform: rotate(180deg);
   }
 }
