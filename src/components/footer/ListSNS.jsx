@@ -5,6 +5,7 @@ import IconInflearn from "../../assets/icon-infrean.svg";
 import IconYoutube from "../../assets/icon-youtube.svg";
 import IconNaver from "../../assets/icon-naver.svg";
 import IconInsta from "../../assets/icon-insta.svg";
+import handleAnalyticsClick from "../../utils/handleAnalyticsClick";
 
 const ListSNS = () => {
   const SNSList = [
@@ -44,7 +45,16 @@ const ListSNS = () => {
     <ul className={styles.snsBtnlist}>
       {SNSList.map((sns, index) => (
         <li key={index}>
-          <a className={styles.snsBtn} href={sns.href} target={sns.target}>
+          <a
+            className={styles.snsBtn}
+            href={sns.href}
+            target={sns.target}
+            onClick={(event) =>
+              index === 0
+                ? null
+                : handleAnalyticsClick(event, `푸터: ${sns.text}`)
+            }
+          >
             <img src={sns.icon} alt={sns.text} />
             <span className="a11y-hidden">{sns.text}</span>
           </a>
