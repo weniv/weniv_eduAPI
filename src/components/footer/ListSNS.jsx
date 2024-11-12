@@ -3,17 +3,17 @@ import styles from "./ListSNS.module.css";
 import IconHome from "../../assets/icon-Home.svg";
 import IconInflearn from "../../assets/icon-infrean.svg";
 import IconYoutube from "../../assets/icon-youtube.svg";
-import IconNaver from "../../assets/icon-naver.svg";
+import IconBlog from "../../assets/icon-blog.svg";
 import IconInsta from "../../assets/icon-insta.svg";
 import handleAnalyticsClick from "../../utils/handleAnalyticsClick";
 
 const ListSNS = () => {
   const SNSList = [
     {
-      text: "메인",
+      text: "위니브 메인 페이지",
       icon: IconHome,
-      href: "/",
-      target: null,
+      href: "https://weniv.co.kr/",
+      target: "_blank",
     },
     {
       text: "인프런",
@@ -29,7 +29,7 @@ const ListSNS = () => {
     },
     {
       text: "네이버 블로그",
-      icon: IconNaver,
+      icon: IconBlog,
       href: "https://blog.naver.com/paul-lab",
       target: "_blank",
     },
