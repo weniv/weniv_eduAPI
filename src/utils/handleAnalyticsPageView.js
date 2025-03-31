@@ -4,7 +4,7 @@ export default async function handleAnalyticsPageView() {
 
   try {
     const response = await fetch(
-      "https://www.analytics.weniv.co.kr/collect/pageview",
+      "https://dev.wenivops.co.kr/api/weniv_analytics/collect/pageview",
       {
         method: "POST",
         headers: {
