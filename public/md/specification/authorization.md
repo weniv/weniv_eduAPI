@@ -6,7 +6,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/signup` 으로 회원 가입 정보를 전송하는 POST 요청을 보냅니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/signup` 으로 회원 가입 정보를 전송하는 POST 요청을 보냅니다.
 
   ```python
   POST /1/signup
@@ -86,7 +86,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/signup", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -104,10 +104,10 @@
 ## 2. 로그인
 
 - 요청(Request)
-  `https://eduapi.weniv.co.kr/1/login` 으로 로그인을 하기 위해 계정 정보를 전송하는 POST 요청을 보냅니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/login` 으로 로그인을 하기 위해 계정 정보를 전송하는 POST 요청을 보냅니다.
 
   ```python
-  POST / 1 / login;
+  POST / 1 / login
   ```
 
 - 요청 헤더(Header)
@@ -184,7 +184,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/login", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -203,7 +203,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/login_confirm` 으로 헤더에 토큰 정보를 실어 POST 요청을 보내면 토큰이 유효한지 확인할 수 있습니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/login_confirm` 으로 헤더에 토큰 정보를 실어 POST 요청을 보내면 토큰이 유효한지 확인할 수 있습니다.
 
   ```python
   POST / login_confirm
@@ -233,7 +233,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/login_confirm", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/login_confirm", {
     method: "POST",
     headers: {
       Authorization: "Bearer eyJhbGciOi.weniv.h8t7NJKEiWCh7G3",
@@ -248,7 +248,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/login_user_info` 으로 GET 요청을 보내면 회원가입된 모든 사용자의 정보를 확인할 수 있습니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/login_user_info` 으로 GET 요청을 보내면 회원가입된 모든 사용자의 정보를 확인할 수 있습니다.
 
   ```python
   GET / 1 / login_user_info
@@ -264,7 +264,7 @@
 
 - 예제
   ```jsonc
-  fetch("https://eduapi.weniv.co.kr/1/login_user_info")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/login_user_info")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));

@@ -10,4 +10,4 @@ eduAPI의 Swagger 문서를 통해 실시간으로 API 요청을 보내고, 응�
 
 아래 링크를 통해 확인할 수 있으며, API에 대한 자세한 설명은 각 API에 해당하는 API 명세 챕터를 참고하여 주시기 바랍니다.
 
-::a[eduAPI swagger 문서 링크]{class='btn-link' href="https://eduapi.weniv.co.kr/docs" target="\_blank"}
+::a[eduAPI swagger 문서 링크]{class='btn-link' href="https://dev.wenivops.co.kr/services/fastapi-crud/docs" target="\_blank"}

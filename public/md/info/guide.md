@@ -5,7 +5,7 @@
 ## 1. API 주소
 
 ```python
-"https://eduapi.weniv.co.kr"
+https://dev.wenivops.co.kr/services/fastapi-crud
 ```
 
 ## 2. 요청(Request)

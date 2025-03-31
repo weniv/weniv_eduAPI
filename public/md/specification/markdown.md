@@ -6,7 +6,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/markdownblog` 로 GET 요청을 보내 마크다운 형식으로 내용이 작성된 게시글 목록을 확인합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/markdownblog` 로 GET 요청을 보내 마크다운 형식으로 내용이 작성된 게시글 목록을 확인합니다.
 
   ```python
   GET /1/markdownblog
@@ -32,7 +32,7 @@
   ```
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/markdownblog")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/markdownblog")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));

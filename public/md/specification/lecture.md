@@ -6,7 +6,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/course` 로 GET 요청을 보내 강의 목록을 확인합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/course` 로 GET 요청을 보내 강의 목록을 확인합니다.
 
   ```python
   GET /1/course
@@ -35,7 +35,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/course")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/course")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -45,7 +45,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/course/{course_id}` 로 GET 요청을 보내 강의 상세 정보를 확인합니다. 이때 상세 정보를 확인할 강의의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/course/{course_id}` 로 GET 요청을 보내 강의 상세 정보를 확인합니다. 이때 상세 정보를 확인할 강의의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   GET /1/course/<int:course_id>
@@ -75,7 +75,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/course/1")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/course/1")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -85,7 +85,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product` 으로 상품 정보를 전송하는 POST 요청을 보내 상품을 생성합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product` 으로 상품 정보를 전송하는 POST 요청을 보내 상품을 생성합니다.
 
   ```python
   POST /1/product
@@ -168,7 +168,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/course", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/course", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -196,7 +196,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/course/{course_id}` 으로 강의 정보를 전송하는 PUT 요청을 보내 강의 정보를 수정합니다. 이때 수정할 강의의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/course/{course_id}` 으로 강의 정보를 전송하는 PUT 요청을 보내 강의 정보를 수정합니다. 이때 수정할 강의의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   PUT /1/course/<int:course_id>
@@ -282,7 +282,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/course/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/course/1", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -310,7 +310,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/course/{course_id}` 로 DELETE 요청을 보내 강의를 삭제합니다. 이때 삭제할 강의의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/course/{course_id}` 로 DELETE 요청을 보내 강의를 삭제합니다. 이때 삭제할 강의의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   DELETE /1/course/<int:course_id>
@@ -332,7 +332,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/course/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/course/1", {
     method: "DELETE",
   })
     .then((response) => response.json())

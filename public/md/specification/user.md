@@ -6,7 +6,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/user` 로 GET 요청을 보내 사용자 목록을 확인합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/user` 로 GET 요청을 보내 사용자 목록을 확인합니다.
 
   ```python
   GET /1/user
@@ -31,7 +31,7 @@
   ```
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/user")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/user")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -41,7 +41,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/user/{user_id}` 로 GET 요청을 보내 사용자 상세 정보를 확인합니다. 이때 상세 정보를 확인할 사용자의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/user/{user_id}` 로 GET 요청을 보내 사용자 상세 정보를 확인합니다. 이때 상세 정보를 확인할 사용자의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   GET /1/user/<int:user_id>
@@ -69,7 +69,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/user/1")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/user/1")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -79,7 +79,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/user` 로 사용자 정보를 전송하는 POST 요청을 보내 사용자를 생성합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/user` 로 사용자 정보를 전송하는 POST 요청을 보내 사용자를 생성합니다.
 
   ```python
   POST /1/user
@@ -159,7 +159,7 @@
 - 예제
 
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/user", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -183,7 +183,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/user/{user_id}` 로 사용자 정보를 전송하는 PUT 요청을 보내 사용자 정보를 수정합니다. 이때 수정할 사용자의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/user/{user_id}` 로 사용자 정보를 전송하는 PUT 요청을 보내 사용자 정보를 수정합니다. 이때 수정할 사용자의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   PUT /1/user/<int:user_id>
@@ -266,7 +266,7 @@
 - 예제
 
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/user/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/user/1", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -290,7 +290,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/user/{user_id}` 으로 DELETE 요청을 보내 사용자를 삭제합니다. 이때 삭제할 사용자의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/user/{user_id}` 으로 DELETE 요청을 보내 사용자를 삭제합니다. 이때 삭제할 사용자의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   DELETE /1/user/<int:user_id>
@@ -312,7 +312,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/user/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/user/1", {
     method: "DELETE",
   })
     .then((response) => response.json())

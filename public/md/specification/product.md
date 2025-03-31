@@ -6,7 +6,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product` 로 GET 요청을 보내 상품 목록을 확인합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product` 로 GET 요청을 보내 상품 목록을 확인합니다.
 
   ```python
   GET /1/product
@@ -43,7 +43,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/product")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -53,7 +53,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product/{product_id}` 로 GET 요청을 보내 상품 상세 정보를 확인합니다. 이때 상세 정보를 확인할 상품의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product/{product_id}` 로 GET 요청을 보내 상품 상세 정보를 확인합니다. 이때 상세 정보를 확인할 상품의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   GET /1/product/<int:product_id>
@@ -92,7 +92,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/product/1")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product/1")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -102,7 +102,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product` 로 상품 정보를 전송하는 POST 요청을 보내 상품을 생성합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product` 로 상품 정보를 전송하는 POST 요청을 보내 상품을 생성합니다.
 
   ```python
   POST /1/product
@@ -185,7 +185,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/product", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -214,7 +214,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product/{product_id}` 로 상품 정보를 전송하는 PUT 요청을 보내 상품 정보를 수정합니다. 이때 수정할 상품의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product/{product_id}` 로 상품 정보를 전송하는 PUT 요청을 보내 상품 정보를 수정합니다. 이때 수정할 상품의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   PUT /1/product/<int:product_id>
@@ -301,7 +301,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/product/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product/1", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -330,7 +330,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product/{product_id}` 으로 DELETE 요청을 보내 상품을 삭제합니다. 이때 삭제할 상품의 id를 URL에 실어 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product/{product_id}` 으로 DELETE 요청을 보내 상품을 삭제합니다. 이때 삭제할 상품의 id를 URL에 실어 서버로 전송합니다.
 
   ```python
   DELETE /1/product/<int:product_id>
@@ -352,7 +352,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/product/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product/1", {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -364,7 +364,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/product/search?keyword={keyword}` 로 GET 요청을 보내 원하는 keyword에 알맞는 상품 정보를 확인할 수 있습니다. 이때 검색어에 해당하는 keyword를 쿼리 스트링으로 추가합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/product/search?keyword={keyword}` 로 GET 요청을 보내 원하는 keyword에 알맞는 상품 정보를 확인할 수 있습니다. 이때 검색어에 해당하는 keyword를 쿼리 스트링으로 추가합니다.
 
   ```python
   GET /1/product/search?keyword={keyword}
@@ -428,7 +428,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/product/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product/1", {
     method: "DELETE",
   })
     .then((response) => response.json())

@@ -6,7 +6,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/blog` 로 GET 요청을 보내 블로그 목록을 확인합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/blog` 로 GET 요청을 보내 블로그 목록을 확인합니다.
 
   ```python
   GET / 1 / blog
@@ -32,7 +32,7 @@
   ```
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/blog")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/blog")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -42,7 +42,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/blog/{blog_id}` 로 GET 요청을 보내 블로그 상세 정보를 확인합니다. 이때 상세 정보를 확인할 게시글의 id를 URL에 실어 함께 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/blog/{blog_id}` 로 GET 요청을 보내 블로그 상세 정보를 확인합니다. 이때 상세 정보를 확인할 게시글의 id를 URL에 실어 함께 서버로 전송합니다.
 
   ```python
   GET /1/blog/<int:blog_id>
@@ -71,7 +71,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/blog/1")
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/blog/1")
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error(error));
@@ -81,7 +81,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/blog` 로 게시글 정보를 전송하는 POST 요청을 보내 게시글을 생성합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/blog` 로 게시글 정보를 전송하는 POST 요청을 보내 게시글을 생성합니다.
 
   ```jsx
   POST / 1 / blog;
@@ -156,7 +156,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/blog", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/blog", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -175,7 +175,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/blog/{blog_id}` 로 게시글 정보를 전송하는 PUT 요청을 보내 게시글을 수정합니다. 이때 수정할 게시글의 id를 URL에 실어 함께 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/blog/{blog_id}` 로 게시글 정보를 전송하는 PUT 요청을 보내 게시글을 수정합니다. 이때 수정할 게시글의 id를 URL에 실어 함께 서버로 전송합니다.
 
   ```python
   PUT /1/blog/<int:blog_id>
@@ -255,7 +255,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/blog/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/blog/1", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -274,7 +274,7 @@
 
 - 요청(Request)
 
-  `https://eduapi.weniv.co.kr/1/blog/{blog_id}` 로 DELETE 요청을 보내 게시글을 삭제합니다. 이때 삭제할 id를 URL에 실어 함께 서버로 전송합니다.
+  `https://dev.wenivops.co.kr/services/fastapi-crud/1/blog/{blog_id}` 로 DELETE 요청을 보내 게시글을 삭제합니다. 이때 삭제할 id를 URL에 실어 함께 서버로 전송합니다.
 
   ```python
   DELETE /1/blog/<int:blog_id>
@@ -296,7 +296,7 @@
 
 - 예제
   ```jsx
-  fetch("https://eduapi.weniv.co.kr/1/blog/1", {
+  fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/blog/1", {
     method: "DELETE",
   })
     .then((response) => response.json())
