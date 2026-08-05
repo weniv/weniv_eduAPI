@@ -1,21 +1,24 @@
 import "./styles/global.css";
 import AppRoutes from "./routes/AppRoutes";
+import ScrollToTop from "./components/scroll/ScrollToTop";
+import TopButton from "./components/scroll/TopButton";
 import handleAnalyticsPageView from "./utils/handleAnalyticsPageView";
 import { useEffect } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function App() {
-  const location = useLocation();
-  const pathname = location.pathname;
-  const searchParams = useSearchParams();
+  const { pathname, search } = useLocation();
+
+  // 페이지를 이동할 때마다 조회를 집계합니다. (수집 함수가 현재 URL을 직접 읽습니다)
   useEffect(() => {
-    const url = pathname + searchParams.toString();
-    handleAnalyticsPageView(url);
-  }, []);
+    handleAnalyticsPageView();
+  }, [pathname, search]);
 
   return (
     <div className="App">
+      <ScrollToTop />
       <AppRoutes />
+      <TopButton />
     </div>
   );
 }

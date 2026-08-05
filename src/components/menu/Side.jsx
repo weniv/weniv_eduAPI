@@ -45,9 +45,8 @@ const Side = (menudata) => {
     };
   }, [isWide, isOverlayShow]);
 
-  // 페이지를 이동하면 최상단으로 올리고 오버레이를 닫습니다.
+  // 페이지를 이동하면 오버레이를 닫습니다.
   useEffect(() => {
-    window.scrollTo(0, 0);
     setIsOverlayShow(false);
   }, [location.pathname]);
 
