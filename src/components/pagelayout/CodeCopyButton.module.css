@@ -1,0 +1,72 @@
+.copyArea {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: 1px solid var(--grayLv2);
+  border-radius: 1rem;
+  background-color: var(--background);
+  box-shadow: var(--EffectShadow);
+  cursor: pointer;
+}
+
+/* 버튼의 50% 크기 */
+.copyBtn img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.copyBtn:hover {
+  border-color: var(--grayLv3);
+}
+
+.copyBtn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* 복사 완료 안내 */
+.tooltip {
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.8rem;
+  background-color: var(--grayLv4);
+  color: var(--background);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  animation: fadeIn 0.15s ease-out;
+}
+
+/* 버튼을 가리키는 말풍선 꼬리 */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0.6rem solid transparent;
+  border-top-width: 0;
+  border-bottom-color: var(--grayLv4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

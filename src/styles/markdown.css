@@ -54,7 +54,15 @@
 
   pre > code {
     display: grid;
+    /* 트랙이 가장 긴 줄 너비로 늘어나 pre를 넘치지 않도록 */
+    grid-template-columns: minmax(0, 1fr);
   }
+
+  /* 긴 줄은 끊어서 줄바꿈 */
+  pre > code [data-line] {
+    overflow-wrap: anywhere;
+  }
+
   figure {
     position: relative;
     margin: 0;
@@ -66,6 +74,35 @@
     left: 0.5em;
     font-size: 0.9em;
     color: var(--grayLv3);
+  }
+
+  /* 코드블럭 캡션은 pre 앞에 생성되므로, 순서를 뒤집어 흐름 안에 배치합니다.
+     (줄바꿈되어도 코드블럭을 침범하지 않도록) */
+  figure[data-rehype-pretty-code-figure] {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 1em 0 3em 0;
+  }
+
+  /* padding-right: 복사 버튼과 코드가 겹치지 않도록 */
+  figure[data-rehype-pretty-code-figure] > pre {
+    min-width: 0;
+    margin: 0;
+    padding-right: 6.4rem;
+  }
+
+  figure[data-rehype-pretty-code-figure] > figcaption {
+    position: static;
+    margin-top: 0.6em;
+    padding: 0 0.5em;
+    line-height: 1.5;
+  }
+
+  /* 좁은 화면에서는 코드 영역을 최대한 확보 */
+  @media screen and (max-width: 640px) {
+    figure[data-rehype-pretty-code-figure] > pre {
+      padding: 2em 5.6rem 2em 1.5em;
+    }
   }
   /* 리스트 */
   ul,

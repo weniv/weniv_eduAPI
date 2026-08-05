@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   fetchMarkdownContent,
   convertMarkdownToHtml,
 } from "../../utils/convertMarkdowntoHtml";
 import "../../styles/markdown.css";
 import Loading from "../loading/Loading";
+import CodeCopyButton from "./CodeCopyButton";
+
+// rehype-pretty-code는 코드를 한 줄씩 span[data-line]으로 감쌉니다.
+function getCodeText(figure) {
+  const lines = figure.querySelectorAll("pre code [data-line]");
+  return Array.from(lines)
+    .map((line) => line.textContent)
+    .join("\n");
+}
+
 const MarkdownContent = ({ markdownPath, onContentLoad }) => {
   const [htmlContent, setHtmlContent] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [retryCount, setRetryCount] = useState(0);
+  const [codeBlocks, setCodeBlocks] = useState([]);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const maxRetries = 3;
@@ -45,15 +58,40 @@ const MarkdownContent = ({ markdownPath, onContentLoad }) => {
     };
   }, [markdownPath, onContentLoad, retryCount]);
 
+  // 마크다운 HTML이 그려진 뒤, 코드블럭마다 복사 버튼을 붙입니다.
+  useEffect(() => {
+    if (!contentRef.current || !htmlContent) {
+      setCodeBlocks([]);
+      return;
+    }
+
+    const figures = contentRef.current.querySelectorAll(
+      "figure[data-rehype-pretty-code-figure]"
+    );
+
+    setCodeBlocks(
+      Array.from(figures).map((figure) => ({
+        figure,
+        code: getCodeText(figure),
+      }))
+    );
+  }, [htmlContent]);
+
   if (isLoading) {
     return <Loading color="primary" />;
   }
 
   return (
-    <main
-      className="markdownContent"
-      dangerouslySetInnerHTML={{ __html: htmlContent }}
-    />
+    <>
+      <main
+        ref={contentRef}
+        className="markdownContent"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
+      {codeBlocks.map(({ figure, code }, index) =>
+        createPortal(<CodeCopyButton code={code} />, figure, `copy-${index}`)
+      )}
+    </>
   );
 };
 
