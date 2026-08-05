@@ -76,9 +76,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.sort}>
                   <dt data-lang="address">주소:</dt>
-                  <dd data-lang="address-value">
-                    제주 제주시 첨단로 330 세미양빌딩 A동 1층 106호
-                  </dd>
+                  <dd data-lang="address-value">제주시 구산로 58 2층 위니브</dd>
                 </div>
               </dl>
             )}
