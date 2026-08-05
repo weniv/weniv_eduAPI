@@ -252,9 +252,17 @@
   }
 }
 @media screen and (max-width: 767px) {
+  /* 세로로 쌓이는 구간에서는 가로 중앙에 맞춥니다. */
   .func_ul {
     flex-direction: column;
+    align-items: center;
     margin-top: 4rem;
+  }
+  .func_li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .func_li div {
     width: 24rem;

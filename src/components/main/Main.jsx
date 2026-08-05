@@ -82,10 +82,6 @@ const Main = () => {
       </section>
       <section className={styles.section}>
         <h2 className={styles.h2_section}>제공기능</h2>
-        <h3 className={`${styles.title_section} ${styles.center}`}>
-          다양한 API를 통해 <br />
-          비동기 통신 실습을 지원합니다.
-        </h3>
         <ul className={styles.func_ul}>
           <li className={styles.func_li}>
             <div>
