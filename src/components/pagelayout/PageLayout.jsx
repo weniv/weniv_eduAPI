@@ -7,6 +7,7 @@ import Aside from "../menu/Aside";
 import AsideMobile from "../menu/AsideMobile";
 import styles from "./PageLayout.module.css";
 import Side from "../menu/Side";
+import { ASIDE_BREAKPOINT } from "../../utils/breakpoints";
 
 // 메인페이지 전체 레이아웃 구성
 
@@ -61,6 +62,9 @@ const PageLayout = () => {
 
   const { title, subtitle } = getTitleAndSubtitle(menuData, path);
 
+  // 사이드바와 우측 목차가 함께 열려도 본문이 좁아지지 않는 너비인지
+  const canShowAside = viewportWidth > ASIDE_BREAKPOINT;
+
   const handleContentLoad = useCallback(() => {
     setTimeout(() => {
       const headingElements = Array.from(
@@ -74,7 +78,6 @@ const PageLayout = () => {
     <div className={styles.sub}>
       <Side data={menuData} />
       <div className={styles.layout}>
-        {viewportWidth <= 1024 ? <AsideMobile /> : null}
         {viewportWidth > 1024 ? (
           <BreadCrumb
             data={path.split("/").filter(Boolean).slice(1)}
@@ -82,13 +85,15 @@ const PageLayout = () => {
             subtitle={subtitle}
           />
         ) : null}
+        {/* 우측 목차를 띄울 수 없는 너비에서는 가로 폭을 차지하지 않는 접이식 목차 바 */}
+        {!canShowAside ? <AsideMobile /> : null}
         <div className={styles.content}>
           <h2 className="a11y-hidden">{title}</h2>
           <MarkdownContent
             markdownPath={markdownPath}
             onContentLoad={handleContentLoad}
           />
-          {viewportWidth > 1024 && isHeading ? <Aside /> : null}
+          {canShowAside && isHeading ? <Aside /> : null}
         </div>
       </div>
     </div>

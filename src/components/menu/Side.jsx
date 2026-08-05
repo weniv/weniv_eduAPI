@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Side.module.css";
 import ToggleClose from "../../assets/icon-side-close-left.svg";
 import ToggleOpen from "../../assets/icon-chapter.svg";
@@ -7,66 +7,65 @@ import Nav from "./Nav";
 import Copyright from "../footer/Copyright";
 import ListSNS from "../footer/ListSNS";
 
+// 넓은 화면에서 사이드바를 열어둘지에 대한 사용자의 선택을 기억합니다.
+const SIDE_STORAGE_KEY = "sidebar";
+
 const Side = (menudata) => {
-  const slideRef = useRef(null);
-  const [isMenuShow, setIsMenuShow] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  // 넓은 화면에서의 선택 (새로고침·리사이즈 후에도 유지)
+  const [isPinned, setIsPinned] = useState(
+    () => localStorage.getItem(SIDE_STORAGE_KEY) === "true"
+  );
+  // 좁은 화면에서 버튼으로 여는 오버레이 (유지하지 않음)
+  const [isOverlayShow, setIsOverlayShow] = useState(false);
   const location = useLocation();
+
+  const isWide = viewportWidth > 1024;
+  const isMenuShow = isWide ? isPinned : isOverlayShow;
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setViewportWidth(width);
-      if (width <= 1024 && isMenuShow) {
-        setIsMenuShow(false);
-        document.body.style.overflow = "auto";
-        localStorage.setItem("toc", "false");
+      // 넓어지면 오버레이는 닫습니다. 사이드바는 저장된 선택에 따라 다시 열립니다.
+      if (width > 1024) {
+        setIsOverlayShow(false);
       }
     };
 
     window.addEventListener("resize", handleResize);
-
-    // 초기 로드 시 상태 설정
-    if (viewportWidth > 1024 && localStorage.getItem("toc") === "true") {
-      setIsMenuShow(true);
-    }
-
-    // 컴포넌트 언마운트 시 리스너 제거
     return () => window.removeEventListener("resize", handleResize);
-  }, [viewportWidth, isMenuShow]);
+  }, []);
 
+  // 오버레이가 열려 있는 동안에만 배경 스크롤을 막습니다.
+  useEffect(() => {
+    document.body.style.overflow = !isWide && isOverlayShow ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isWide, isOverlayShow]);
+
+  // 페이지를 이동하면 최상단으로 올리고 오버레이를 닫습니다.
   useEffect(() => {
     window.scrollTo(0, 0);
-    // URL 경로가 변경될 때 사이드바 상태를 모바일에서만 업데이트
-    if (viewportWidth <= 1024) {
-      setIsMenuShow(false);
-      document.body.style.overflow = "auto";
-      localStorage.setItem("toc", "false");
-    }
-  }, [location.pathname, viewportWidth]); // viewportWidth 의존성 추가
+    setIsOverlayShow(false);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
-    setIsMenuShow((prevIsMenuShow) => {
-      const newIsMenuShow = !prevIsMenuShow;
-      if (newIsMenuShow) {
-        // 사이드바가 열릴 때
-        if (viewportWidth <= 1024) {
-          document.body.style.overflow = "hidden";
-        }
-      } else {
-        // 사이드바가 닫힐 때
-        document.body.style.overflow = "auto";
-      }
-      localStorage.setItem("toc", newIsMenuShow ? "true" : "false");
-      return newIsMenuShow;
-    });
+    if (isWide) {
+      const nextIsPinned = !isPinned;
+      setIsPinned(nextIsPinned);
+      localStorage.setItem(SIDE_STORAGE_KEY, String(nextIsPinned));
+    } else {
+      setIsOverlayShow((prevIsOverlayShow) => !prevIsOverlayShow);
+    }
   };
 
   return (
     <>
       {isMenuShow && (
         <>
-          <div ref={slideRef} className={`${styles.side}`}>
+          <div className={`${styles.side}`}>
             <h3 className={styles.side_title}>
               <Link to="/eduAPI">edu API</Link>
             </h3>
@@ -80,9 +79,7 @@ const Side = (menudata) => {
               <span className="a11y-hidden">목차 메뉴 접기</span>
             </button>
           </div>
-          {viewportWidth <= 1024 && (
-            <div className={styles.dim} onClick={toggleMenu}></div>
-          )}
+          {!isWide && <div className={styles.dim} onClick={toggleMenu}></div>}
         </>
       )}
 

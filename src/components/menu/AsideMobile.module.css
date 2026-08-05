@@ -7,6 +7,13 @@
   margin: 0.4rem 0.4rem 0.4rem 0.4rem;
   box-sizing: border-box;
 }
+/* 우측 목차 대신 노출되는 구간에서는 본문 좌우 여백에 맞춥니다. */
+@media screen and (min-width: 1025px) {
+  .toc {
+    margin: 0.4rem 5rem;
+  }
+}
+
 .tocWrap {
   position: relative;
 }

@@ -3,13 +3,15 @@ import styles from "./AsideMobile.module.css";
 import Toggle from "../../assets/icon-down.svg";
 import Toc from "./Toc";
 import SubBanner from "./SubBanner";
+import { ASIDE_BREAKPOINT } from "../../utils/breakpoints";
 
 const AsideMobile = () => {
   const [isMenuShow, setIsMenuShow] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1024) {
+      // 우측 목차로 전환되는 너비가 되면 열려있던 목차를 닫습니다.
+      if (window.innerWidth > ASIDE_BREAKPOINT) {
         setIsMenuShow(false);
       }
     };

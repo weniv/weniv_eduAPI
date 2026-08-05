@@ -60,29 +60,3 @@
   outline-offset: -1px;
   z-index: 10;
 }
-
-@media screen and (max-width: 1024px) {
-  .aside {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: calc(100% - 7.6rem);
-  }
-  .aside .sublist {
-    width: 100%;
-  }
-  .btnOpen {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 5rem;
-  }
-  .btnOpen img {
-    margin-right: 1.2rem;
-  }
-
-  .rotated {
-    transform: rotate(180deg);
-  }
-}
