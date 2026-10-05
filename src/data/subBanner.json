@@ -8,20 +8,20 @@
     "url": "https://www.youtube.com/@jejucodingcamp"
   },
   {
-    "title": "위니브 부트캠프",
-    "subText": "위니브와 함께 공부해요!",
-    "src": "banner1.png",
-    "bgColor": "#FFE76F",
-    "textColor": "#000",
-    "url": "https://bootcamp.weniv.co.kr/"
+    "title": "위니빌리지 디스코드 커뮤니티",
+    "subText": "함께 소통하고, 함께 성장할 시간",
+    "src": "discord_no_bg.png",
+    "bgColor": "#5865F2",
+    "textColor": "#fff",
+    "url": "https://discord.gg/MASRTmyu8a"
   },
   {
-    "title": "지역기반 개발 스터디! 스터디인",
-    "subText": "이 api를 활용하여 같이 공부할 사람을 모아봐요",
-    "src": "banner2.png",
-    "bgColor": "rgb(46, 111, 242)",
+    "title": "위니브 강의, 영상으로 보고싶다면?",
+    "subText": "위니버시티에서 VOD로 시청하기",
+    "src": "subBanner-weniversity.png",
+    "bgColor": "#2E5DD6",
     "textColor": "#fff",
-    "url": "https://www.studyin.co.kr/"
+    "url": "https://weniversity.co.kr"
   },
   {
     "title": "위니북스",
