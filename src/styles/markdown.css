@@ -170,6 +170,28 @@
       margin-top: 1.6rem;
     }
   }
+  /* 표 */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 1em 0 2em 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+  th,
+  td {
+    border: 1px solid var(--grayLv2);
+    padding: 0.6em 1em;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: var(--grayLv1);
+    font-weight: 600;
+    white-space: nowrap;
+  }
   /* 콜아웃 */
   div.callout {
     border: 1px solid var(--grayLv2);
